@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import toast from "react-hot-toast";
 
 const Reset = () => {
   const { resetPass } = useContext(AuthContext);
@@ -89,5 +88,4 @@ const Reset = () => {
     </div>
   );
 };
-
 export default Reset;

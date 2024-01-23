@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import SocialLogin from "../Social/SocialLogin";
 
 const Register = () => {
   const { userRegister, userProfile } = useContext(AuthContext);
   // registration function
   const handleRegister = (e) => {
     e.preventDefault();
-    const form=e.target
+    const form = e.target;
     const name = form.name.value;
     const image = form.image.value;
     const email = form.email.value;
@@ -53,7 +54,7 @@ const Register = () => {
   };
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="flex flex-col items-center justify-center g-0 h-screen px-4">
+      <div className="flex flex-col items-center justify-center h-screen px-4">
         {/* card */}
         <div className="justify-center items-center w-full bg-white rounded-md shadow lg:flex md:mt-0 max-w-md xl:p-0">
           {/* card body */}
@@ -148,6 +149,7 @@ const Register = () => {
                   </div>
                 </div>
               </div>
+              <SocialLogin />
             </form>
           </div>
         </div>

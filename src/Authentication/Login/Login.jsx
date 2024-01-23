@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../Social/SocialLogin";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
@@ -112,6 +113,7 @@ const Login = () => {
                   </div>
                 </div>
               </div>
+              <SocialLogin/>
             </form>
           </div>
         </div>
