@@ -1,6 +1,55 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Register = () => {
+  const { userRegister, userProfile } = useContext(AuthContext);
+  // registration function
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const image = e.target.image.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    // console.log(password);
+
+    // regex for special character
+    const special = /[!@#$%^&*()_+\-=[\]{};:',.<>?~]/g;
+    if (password.length < 6) {
+      toast.error("Password should be 6 characters long.");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("Password should contain one Upper case character.");
+      return;
+    } else if (!special.test(password)) {
+      toast.error("Password should contain one special character.");
+      return;
+    }
+
+    userRegister(email, password)
+      .then((response) => {
+        // toast.success("User created successfully!!!");
+        console.log(response.user);
+        userProfile(name, image)
+          .then((response) => {
+            Swal.fire({
+              title: "User created successfully!",
+              timer: 2000,
+              color: "#002172",
+              showConfirmButton: false,
+              icon: "success",
+            });
+          })
+          .catch((error) => {
+            toast.error(error.code);
+          });
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
+  };
   return (
     <div className="max-w-2xl mx-auto">
       <div className="flex flex-col items-center justify-center g-0 h-screen px-4">
@@ -20,7 +69,7 @@ const Register = () => {
               <p className="mb-6">Please enter your information.</p>
             </div>
             {/* form */}
-            <form>
+            <form onSubmit={handleRegister}>
               {/* username */}
               <div className="lg:flex 2xl:block gap-4">
                 <div className="mb-3">
@@ -28,7 +77,7 @@ const Register = () => {
                   <input
                     type="text"
                     className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
-                    name="username"
+                    name="name"
                     placeholder="Name"
                     required
                   />
@@ -67,7 +116,7 @@ const Register = () => {
                   required
                 />
               </div>
-              
+
               <div>
                 {/* button */}
                 <div className="grid">
@@ -90,7 +139,7 @@ const Register = () => {
                   </div>
                   <div>
                     <Link
-                      to='/reset'
+                      to="/reset"
                       className="text-[#002172] hover:text-[#ec3323]"
                     >
                       Forgot your password?

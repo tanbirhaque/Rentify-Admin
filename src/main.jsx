@@ -7,6 +7,8 @@ import AdminDash from "./AdminDash/AdminDash.jsx";
 import Register from "./Authentication/Register/Register.jsx";
 import Login from "./Authentication/Login/Login.jsx";
 import Reset from "./Authentication/Reset/Reset.jsx";
+import AuthProvider, { AuthContext } from "./Provider/AuthProvider.jsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <Toaster />
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
