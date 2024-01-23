@@ -90,7 +90,7 @@ const Register = () => {
                   </div>
                   <div>
                     <Link
-                      to='/forget'
+                      to='/reset'
                       className="text-[#002172] hover:text-[#ec3323]"
                     >
                       Forgot your password?

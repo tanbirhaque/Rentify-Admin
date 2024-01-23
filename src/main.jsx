@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AdminDash from "./AdminDash/AdminDash.jsx";
 import Register from "./Authentication/Register/Register.jsx";
 import Login from "./Authentication/Login/Login.jsx";
+import Reset from "./Authentication/Reset/Reset.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/reset",
+    element: <Reset />,
   },
 ]);
 
