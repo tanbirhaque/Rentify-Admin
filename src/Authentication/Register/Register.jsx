@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Register = () => {
   return (
     <div className="max-w-2xl mx-auto">
@@ -15,33 +17,27 @@ const Register = () => {
                 </h4>
               </div>
               {/* logo */}
-              <p className="mb-6">Please enter your user information.</p>
+              <p className="mb-6">Please enter your information.</p>
             </div>
             {/* form */}
             <form>
               {/* username */}
               <div className="lg:flex 2xl:block gap-4">
                 <div className="mb-3">
-                  <label htmlFor="username" className="inline-block mb-2">
-                    User Name
-                  </label>
+                  <label className="inline-block mb-2">Name</label>
                   <input
                     type="text"
-                    id="username"
                     className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                     name="username"
-                    placeholder="User Name"
+                    placeholder="Name"
                     required
                   />
                 </div>
                 {/* email */}
                 <div className="mb-3">
-                  <label htmlFor="email" className="inline-block mb-2">
-                    Email
-                  </label>
+                  <label className="inline-block mb-2">Email</label>
                   <input
                     type="email"
-                    id="email"
                     className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                     name="email"
                     placeholder="Email address here"
@@ -49,89 +45,56 @@ const Register = () => {
                   />
                 </div>
               </div>
-              {/* password */}
+              {/* Image */}
               <div className="mb-3">
-                <label htmlFor="password" className="inline-block mb-2">
-                  Password
-                </label>
+                <label className="inline-block mb-2">Image URL</label>
                 <input
-                  type="password"
-                  id="password"
+                  type="url"
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
-                  name="password"
-                  placeholder="**************"
+                  name="image"
+                  placeholder="Image URL here"
                   required
                 />
               </div>
               {/* password */}
               <div className="mb-5">
-                <label htmlFor="confirm-password" className="inline-block mb-2">
-                  Confirm Password
-                </label>
+                <label className="inline-block mb-2">Password</label>
                 <input
                   type="password"
-                  id="confirm-password"
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="password"
                   placeholder="**************"
                   required
                 />
               </div>
-              {/* checkbox */}
-              <div className="mb-5">
-                <div className="flex items-start gap-2">
-                  <input
-                    type="checkbox"
-                    className="mr-1 mt-1 w-4 h-4 text-[#002172] bg-white border-gray-300 rounded focus:ring-[#002172] focus:outline-none focus:ring-2"
-                    id="agreeCheck"
-                  />
-                  <label className="inline-block" htmlFor="agreeCheck">
-                    <span>
-                      I agree to the
-                      <a
-                        href="#!"
-                        className="text-[#002172] hover:text-[#002172]"
-                      >
-                        Terms of Service
-                      </a>
-                      and
-                      <a
-                        href="#!"
-                        className="text-[#002172] hover:text-[#002172]"
-                      >
-                        Privacy Policy.
-                      </a>
-                    </span>
-                  </label>
-                </div>
-              </div>
+              
               <div>
                 {/* button */}
                 <div className="grid">
                   <button
                     type="submit"
-                    className="btn bg-[#002172] text-white border-[#002172] hover:bg-[#002172] hover:border-[#002172] active:bg-[#002172] active:border-[#002172] focus:outline-none focus:ring-4 focus:ring-indigo-300"
+                    className="btn bg-[#002172] text-white border-[#002172] hover:bg-[#ec3323] hover:border-[#ec3323] active:bg-[#002172] active:border-[#002172] focus:outline-none focus:ring-4 focus:ring-indigo-300"
                   >
-                    Create Free Account
+                    Create Admin Account
                   </button>
                 </div>
                 <div className="md:flex md:justify-between mt-4">
                   <div className="mb-2 mb-md-0">
                     Already member?
-                    <a
-                      href="sign-in.html"
-                      className="text-[#002172] hover:text-[#002172]"
+                    <Link
+                      to="/login"
+                      className="text-[#002172] hover:text-[#ec3323]"
                     >
                       Login
-                    </a>
+                    </Link>
                   </div>
                   <div>
-                    <a
-                      href="forget-password.html"
-                      className="text-[#002172] hover:text-[#002172]"
+                    <Link
+                      to='/forget'
+                      className="text-[#002172] hover:text-[#ec3323]"
                     >
                       Forgot your password?
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
