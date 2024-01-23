@@ -9,10 +9,11 @@ const Register = () => {
   // registration function
   const handleRegister = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const image = e.target.image.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    const form=e.target
+    const name = form.name.value;
+    const image = form.image.value;
+    const email = form.email.value;
+    const password = form.password.value;
     // console.log(password);
 
     // regex for special character

@@ -9,8 +9,9 @@ const Login = () => {
   //login function
   const handleLogin = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    const form=e.target
+    const email = form.email.value;
+    const password = form.password.value;
     loginUser(email, password)
       .then((response) => {
         Swal.fire({
