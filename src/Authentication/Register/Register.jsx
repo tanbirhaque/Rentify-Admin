@@ -1,41 +1,79 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import SocialLogin from "../Social/SocialLogin";
+import { Controller, useForm } from "react-hook-form";
 
 const Register = () => {
   const { userRegister, userProfile } = useContext(AuthContext);
   // registration function
-  const handleRegister = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const image = form.image.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    // console.log(password);
+  // const handleRegister = (e) => {
+  //   // e.preventDefault();
+  //   // const form = e.target;
+  //   // const name = form.name.value;
+  //   // const image = form.image.value;
+  //   // const email = form.email.value;
+  //   // const password = form.password.value;
+  //   // console.log(password);
+  //   // regex for special character
+  //   // const special = /[!@#$%^&*()_+\-=[\]{};:',.<>?~]/g;
+  //   // if (password.length < 6) {
+  //   //   toast.error("Password should be 6 characters long.");
+  //   //   return;
+  //   // } else if (!/[A-Z]/.test(password)) {
+  //   //   toast.error("Password should contain one Upper case character.");
+  //   //   return;
+  //   // } else if (!special.test(password)) {
+  //   //   toast.error("Password should contain one special character.");
+  //   //   return;
+  //   // }
+  //   // userRegister(email, password)
+  //   //   .then((response) => {
+  //   //     // toast.success("User created successfully!!!");
+  //   //     console.log(response.user);
+  //   //     userProfile(name, image)
+  //   //       .then((response) => {
+  //   //         Swal.fire({
+  //   //           title: "User created successfully!",
+  //   //           timer: 2000,
+  //   //           color: "#002172",
+  //   //           showConfirmButton: false,
+  //   //           icon: "success",
+  //   //         });
+  //   //       })
+  //   //       .catch((error) => {
+  //   //         toast.error(error.code);
+  //   //       });
+  //   //   })
+  //   //   .catch((error) => {
+  //   //     toast.error(error.code);
+  //   //   });
+  //   //
+  //   //
+  // };
+  //
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
 
-    // regex for special character
-    const special = /[!@#$%^&*()_+\-=[\]{};:',.<>?~]/g;
-    if (password.length < 6) {
-      toast.error("Password should be 6 characters long.");
-      return;
-    } else if (!/[A-Z]/.test(password)) {
-      toast.error("Password should contain one Upper case character.");
-      return;
-    } else if (!special.test(password)) {
-      toast.error("Password should contain one special character.");
-      return;
-    }
+  const onSubmit = (data) => {
+    // console.log(data);
+    userRegister(data.email, data.password)
+      .then((res) => {
+        console.log(res.user);
 
-    userRegister(email, password)
-      .then((response) => {
-        // toast.success("User created successfully!!!");
-        console.log(response.user);
-        userProfile(name, image)
-          .then((response) => {
+        // const userInfo = {
+        //   name: data.name,
+        //   email: data.email,
+        //   image: data.image,
+        //   role: "student",
+        // };
+        userProfile(data.name, data.image)
+          .then(() => {
             Swal.fire({
               title: "User created successfully!",
               timer: 2000,
@@ -44,14 +82,21 @@ const Register = () => {
               icon: "success",
             });
           })
-          .catch((error) => {
-            toast.error(error.code);
-          });
+          .catch();
       })
-      .catch((error) => {
-        toast.error(error.code);
+      .catch((err) => {
+        console.log(err.code);
+        console.log(err.message);
+        Swal.fire({
+          title: err.code,
+          timer: 2000,
+          color: "#002172",
+          showConfirmButton: false,
+          icon: "error",
+        });
       });
   };
+  //
   return (
     <div className="max-w-2xl mx-auto">
       <div className="flex flex-col items-center justify-center h-screen px-4">
@@ -71,52 +116,86 @@ const Register = () => {
               <p className="mb-6">Please enter your information.</p>
             </div>
             {/* form */}
-            <form onSubmit={handleRegister}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* username */}
               <div className="lg:flex 2xl:block gap-4">
                 <div className="mb-3">
                   <label className="inline-block mb-2">Name</label>
                   <input
+                    required
                     type="text"
                     className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                     name="name"
                     placeholder="Name"
-                    required
+                    {...register("name")}
                   />
                 </div>
                 {/* email */}
                 <div className="mb-3">
                   <label className="inline-block mb-2">Email</label>
                   <input
+                    required
                     type="email"
                     className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                     name="email"
                     placeholder="Email address here"
-                    required
+                    {...register("email")}
                   />
                 </div>
               </div>
               {/* Image */}
               <div className="mb-3">
                 <label className="inline-block mb-2">Image URL</label>
-                <input
-                  type="url"
-                  className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
+                {/*  */}
+                <Controller
                   name="image"
-                  placeholder="Image URL here"
-                  required
+                  control={control}
+                  render={({ field }) => (
+                    <>
+                      <input
+                        name="image"
+                        type="file"
+                        required
+                        onChange={(e) => {
+                          // Convert the selected image to URL and set it in the field
+                          const url = URL.createObjectURL(e.target.files[0]);
+                          field.onChange(url);
+                        }}
+                      />
+                      <img
+                        src={field.value}
+                        alt="Preview"
+                        style={{ maxWidth: "100%" }}
+                      />
+                    </>
+                  )}
                 />
+                {/*  */}
               </div>
               {/* password */}
               <div className="mb-5">
                 <label className="inline-block mb-2">Password</label>
                 <input
+                  required
                   type="password"
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="password"
                   placeholder="**************"
-                  required
+                  {...register("password", {
+                    minLength: 6,
+                    pattern: /^(?=.*[A-Z]).{6,}$/i,
+                  })}
                 />
+                {errors.password?.type === "minLength" && (
+                  <span className="text-red-700">
+                    Password length should be 6 characters.
+                  </span>
+                )}
+                {errors.password?.type === "pattern" && (
+                  <span className=" text-red-700">
+                    Password should contain at least one Capital letter.
+                  </span>
+                )}
               </div>
 
               <div>

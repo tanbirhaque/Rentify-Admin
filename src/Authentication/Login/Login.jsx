@@ -4,30 +4,44 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../Social/SocialLogin";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
   //login function
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const form=e.target
-    const email = form.email.value;
-    const password = form.password.value;
-    loginUser(email, password)
-      .then((response) => {
+  //form data
+  const {
+    register,
+    handleSubmit,
+    // watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    loginUser(data.email, data.password)
+      .then((res) => {
+        console.log(res.user);
         Swal.fire({
-          title: "Login successfully!",
+          title: "Login successful!!!",
           timer: 2000,
           color: "#002172",
           showConfirmButton: false,
           icon: "success",
         });
-        console.log(response.user);
       })
-      .catch((error) => {
-        toast.error(error.code);
+      .catch((err) => {
+        console.log(err.message);
+        Swal.fire({
+          title: err.code,
+          timer: 2000,
+          color: "#002172",
+          showConfirmButton: false,
+          icon: "error",
+        });
       });
   };
+  //
   return (
     <div className="max-w-2xl mx-auto">
       {/*  */}
@@ -48,7 +62,7 @@ const Login = () => {
               <p className="mb-6">Please enter your information.</p>
             </div>
             {/* form */}
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* username */}
               <div className="mb-3">
                 <label className="inline-block mb-2">Email</label>
@@ -57,6 +71,7 @@ const Login = () => {
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="email"
                   placeholder="Email address here"
+                  {...register("email")}
                   required
                 />
               </div>
@@ -68,6 +83,7 @@ const Login = () => {
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="password"
                   placeholder="**************"
+                  {...register("password")}
                   required
                 />
               </div>
@@ -113,7 +129,7 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-              <SocialLogin/>
+              <SocialLogin />
             </form>
           </div>
         </div>

@@ -55,6 +55,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
+  
   const authInfo = {
     loading,
     googleLogin,
