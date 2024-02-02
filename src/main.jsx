@@ -9,24 +9,49 @@ import Login from "./Authentication/Login/Login.jsx";
 import Reset from "./Authentication/Reset/Reset.jsx";
 import AuthProvider, { AuthContext } from "./Provider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
+import DashLayout from "./DashLayout/DashLayout.jsx";
 
 const router = createBrowserRouter([
+  // {
+  //   path: "/",
+  //   element: <AdminDash></AdminDash>,
+  // },
+  // {
+  //   path: "/register",
+  //   element: <Register />,
+  // },
+  // {
+  //   path: "/login",
+  //   element: <Login />,
+  // },
+  // {
+  //   path: "/reset",
+  //   element: <Reset />,
+  // },
   {
     path: "/",
-    element: <AdminDash></AdminDash>,
+    element: <Login />,
+    children: [
+
+    ],
   },
   {
-    path: "/register",
+    path: "register",
     element: <Register />,
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/reset",
+    path: "reset",
     element: <Reset />,
   },
+  // Dashboard routes here
+  {
+    path: "dashboard",
+    element: <DashLayout></DashLayout>,
+    children: [
+
+    ],
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
