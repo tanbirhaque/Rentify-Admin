@@ -20,85 +20,65 @@ const SideBar = () => {
           Profile
         </NavLink>
       </li>
-
-      <li className="dashLi">
-        <NavLink
-          to="/dashboard/my-requests"
-          className="dashNav flex items-center gap-2"
-        >
-          <MdOutlinePendingActions className="dashIcon text-[#64707d]"></MdOutlinePendingActions>
-          Requested Properties
-        </NavLink>
-      </li>
-
-      <li className="dashLi">
-        <NavLink
-          to="/dashboard/saved"
-          className="dashNav flex items-center gap-2"
-        >
-          <FaBookmark className="dashIcon text-[#64707d]"></FaBookmark>
-          Saved Properties
-        </NavLink>
-      </li>
     </>
 
 
-    const ownerRoutes = <>
-        <li className="dashLi">
-            <NavLink
-                to="/dashboard/add"
-                className="dashNav flex items-center gap-2"
-            >
-                <IoAddCircleSharp className="dashIcon text-[#64707d]"></IoAddCircleSharp >
-                Add Properties
-            </NavLink>
-        </li>
-        <li className="dashLi pt-2">
-            <NavLink
-                to="/dashboard/manage"
-                className="dashNav flex items-center gap-2"
-            >
-                <MdManageHistory className="dashIcon text-[#64707d]"></MdManageHistory>
-                Manage Properties
-            </NavLink>
-        </li>
-        <li className="dashLi pt-2">
-            <NavLink
-                to="/dashboard/rentReq"
-                className="dashNav flex items-center gap-2"
-            >
-                <HiCubeTransparent className="dashIcon text-[#64707d]"> </HiCubeTransparent>
-                Rent Request
-            </NavLink>
-        </li>
-        <li className="dashLi pt-2">
-            <NavLink
-                to="/dashboard/buyReq"
-                className="dashNav flex items-center gap-2"
-            >
-                <CiShoppingTag className="dashIcon text-[#64707d]"></CiShoppingTag>
-                Buy Request
-            </NavLink>
-        </li>
-        <li className="dashLi pt-2">
-            <NavLink
-                to="/dashboard/soldProperties"
-                className="dashNav flex items-center gap-2"
-            >
-                <MdOutlineRemoveShoppingCart className="dashIcon text-[#64707d]"></MdOutlineRemoveShoppingCart>
-               Sold Out Properties
-            </NavLink>
-        </li>
-        <li className="dashLi pt-2">
-            <NavLink
-                to="/dashboard/rentOutProperties"
-                className="dashNav flex items-center gap-2"
-            >
-                <IoBookmarksSharp className="dashIcon text-[#64707d]"></IoBookmarksSharp>
-                Rent Out Properties
-            </NavLink>
-        </li>
-    </>
+    // const ownerRoutes = <>
+    //     <li className="dashLi">
+    //         <NavLink
+    //             to="/dashboard/add"
+    //             className="dashNav flex items-center gap-2"
+    //         >
+    //             <IoAddCircleSharp className="dashIcon text-[#64707d]"></IoAddCircleSharp >
+    //             Add Properties
+    //         </NavLink>
+    //     </li>
+    //     <li className="dashLi pt-2">
+    //         <NavLink
+    //             to="/dashboard/manage"
+    //             className="dashNav flex items-center gap-2"
+    //         >
+    //             <MdManageHistory className="dashIcon text-[#64707d]"></MdManageHistory>
+    //             Manage Properties
+    //         </NavLink>
+    //     </li>
+    //     <li className="dashLi pt-2">
+    //         <NavLink
+    //             to="/dashboard/rentReq"
+    //             className="dashNav flex items-center gap-2"
+    //         >
+    //             <HiCubeTransparent className="dashIcon text-[#64707d]"> </HiCubeTransparent>
+    //             Rent Request
+    //         </NavLink>
+    //     </li>
+    //     <li className="dashLi pt-2">
+    //         <NavLink
+    //             to="/dashboard/buyReq"
+    //             className="dashNav flex items-center gap-2"
+    //         >
+    //             <CiShoppingTag className="dashIcon text-[#64707d]"></CiShoppingTag>
+    //             Buy Request
+    //         </NavLink>
+    //     </li>
+    //     <li className="dashLi pt-2">
+    //         <NavLink
+    //             to="/dashboard/soldProperties"
+    //             className="dashNav flex items-center gap-2"
+    //         >
+    //             <MdOutlineRemoveShoppingCart className="dashIcon text-[#64707d]"></MdOutlineRemoveShoppingCart>
+    //            Sold Out Properties
+    //         </NavLink>
+    //     </li>
+    //     <li className="dashLi pt-2">
+    //         <NavLink
+    //             to="/dashboard/rentOutProperties"
+    //             className="dashNav flex items-center gap-2"
+    //         >
+    //             <IoBookmarksSharp className="dashIcon text-[#64707d]"></IoBookmarksSharp>
+    //             Rent Out Properties
+    //         </NavLink>
+    //     </li>
+    // </>
 
   return (
     <div>
@@ -132,13 +112,13 @@ const SideBar = () => {
           <hr className="mb-3" />
           <ul className="flex flex-col gap-2">{sideLinks}</ul>
 
-          <h3 className="poppins-font font-semibold text-xl mt-5 text-gray-400">
+          {/* <h3 className="poppins-font font-semibold text-xl mt-5 text-gray-400">
             Owner Routes
-          </h3>
-          <hr className="mb-3" />
-          <ul>{ownerRoutes}</ul>
+          </h3> */}
+          {/* <hr className="mb-3" />
+          <ul>{ownerRoutes}</ul> */}
           {/* drop-down -1*/}
-          <div className="collapse ">
+          {/* <div className="collapse ">
             <input type="checkbox" />
             <div className="text-[919EAB] hover:text-white collapse-title font-medium flex gap-1.5 items-center">
               <FaRegClone />
@@ -159,9 +139,9 @@ const SideBar = () => {
                 <Link>Four</Link>
               </p>
             </div>
-          </div>
+          </div> */}
           {/* drop-down -2*/}
-          <div className="collapse ">
+          {/* <div className="collapse ">
             <input type="checkbox" />
             <div className="text-[919EAB] hover:text-white collapse-title font-medium flex gap-1.5 items-center">
               <FaRegClone />
@@ -182,7 +162,7 @@ const SideBar = () => {
                 <Link>Four</Link>
               </p>
             </div>
-          </div>
+          </div> */}
           {/* drop-down*/}
         </div>
       </div>
