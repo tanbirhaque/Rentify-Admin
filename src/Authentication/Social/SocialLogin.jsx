@@ -14,6 +14,7 @@ const SocialLogin = () => {
           showConfirmButton: false,
           icon: "success",
         });
+        window.location.href = "/dashboard";
       })
       .catch(() => {});
   };

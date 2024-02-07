@@ -1,10 +1,11 @@
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const RoleChangeTable = ({ user }) => {
-  const { _id, name, email, image, role } = user || {};
+const RoleChangeTable = ({ item, user }) => {
+  const { _id, name, email, image, role } = item || {};
+  // const { _id, name, email, image, role } = user || {};
   const axiosSecure = useAxiosSecure();
-  // const [, refetch] = UseTotalUsers();
+
   const handleMakeOwner = (id) => {
     console.log(id);
     Swal.fire({
@@ -80,48 +81,6 @@ const RoleChangeTable = ({ user }) => {
         <td>{role}</td>
         {/* <td>Pending</td> */}
         <td>
-          {/* <div className="flex gap-2 items-center justify-center">
-            <div>
-              {requestStatus === "accepted" ? (
-                <>{requestStatus}</>
-              ) : (
-                <>
-                  {requestStatus === "rejected" ? (
-                    <>{requestStatus}</>
-                  ) : (
-                    <>
-                      <button
-                        onClick={() => setAccept(_id)}
-                        className="btn text-white hover:bg-[#002172] bg-[#e33226]"
-                      >
-                        Accept
-                      </button>
-                    </>
-                  )}
-                </>
-              )}
-            </div>
-            <div>
-              {requestStatus === "accepted" ? (
-                <>{requestStatus}</>
-              ) : (
-                <>
-                  {requestStatus === "rejected" ? (
-                    <>{requestStatus}</>
-                  ) : (
-                    <>
-                      <button
-                        onClick={() => setReject(_id)}
-                        className="btn text-white hover:bg-[#002172] bg-[#e33226] "
-                      >
-                        Reject
-                      </button>
-                    </>
-                  )}
-                </>
-              )}
-            </div>
-          </div> */}
           <th>
             {role === "owner" ? (
               <p className="text-green-700 text-xl">Owner</p>
