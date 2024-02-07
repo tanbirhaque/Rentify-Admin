@@ -1,13 +1,15 @@
+//component added by "Fahima"
+
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const RoleChangeTable = ({ item, user }) => {
+const RoleChangeTable = ({ item, user,refetch }) => {
   const { _id, name, email, image, role } = item || {};
   // const { _id, name, email, image, role } = user || {};
   const axiosSecure = useAxiosSecure();
 
   const handleMakeOwner = (id) => {
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: `Do you want to make ${name} an owner?`,
       showDenyButton: true,
@@ -19,7 +21,7 @@ const RoleChangeTable = ({ item, user }) => {
       if (result.isConfirmed) {
         axiosSecure.patch(`/users/${id}`).then((res) => {
           if (res.data.modifiedCount > 0) {
-            // refetch();
+            refetch();
             Swal.fire({
               position: "top",
               icon: "success",

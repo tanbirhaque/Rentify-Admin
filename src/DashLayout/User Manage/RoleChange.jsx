@@ -1,9 +1,11 @@
+//component added by "Fahima"
+
 import useGetUsers from "../../Hooks/useGetUsers";
 import useOwners from "../../Hooks/useOwners";
 import RoleChangeTable from "./RoleChangeTable";
 
 const RoleChange = () => {
-  const [users] = useGetUsers();
+  const [users, refetch] = useGetUsers();
   const [owners] = useOwners();
 
   const commonEmails = users.filter((user) =>
@@ -46,7 +48,7 @@ const RoleChange = () => {
           </thead>
           <tbody>
             {commonEmails.map((item) => (
-              <RoleChangeTable key={item._id} item={item} />
+              <RoleChangeTable key={item._id} item={item} refetch={refetch} />
             ))}
             {/* {users.map((user) => (
               <RoleChangeTable key={user._id} user={user} owner={owners} />

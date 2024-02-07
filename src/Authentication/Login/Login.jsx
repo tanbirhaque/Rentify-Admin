@@ -1,3 +1,5 @@
+//component added by "Fahima"
+
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -28,7 +30,7 @@ const Login = () => {
           showConfirmButton: false,
           icon: "success",
         });
-        window.location.href = '/dashboard';
+        window.location.href = "/dashboard";
       })
       .catch((err) => {
         console.log(err.message);
@@ -39,7 +41,6 @@ const Login = () => {
           showConfirmButton: false,
           icon: "error",
         });
-        
       });
   };
   //
