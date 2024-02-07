@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -29,6 +28,7 @@ const Login = () => {
           showConfirmButton: false,
           icon: "success",
         });
+        window.location.href = '/dashboard';
       })
       .catch((err) => {
         console.log(err.message);
@@ -39,6 +39,7 @@ const Login = () => {
           showConfirmButton: false,
           icon: "error",
         });
+        
       });
   };
   //
