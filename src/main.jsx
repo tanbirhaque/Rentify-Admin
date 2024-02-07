@@ -16,22 +16,6 @@ import Private from "./Provider/Private.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <AdminDash></AdminDash>,
-  // },
-  // {
-  //   path: "/register",
-  //   element: <Register />,
-  // },
-  // {
-  //   path: "/login",
-  //   element: <Login />,
-  // },
-  // {
-  //   path: "/reset",
-  //   element: <Reset />,
-  // },
   {
     path: "/",
     element: <Login />,
