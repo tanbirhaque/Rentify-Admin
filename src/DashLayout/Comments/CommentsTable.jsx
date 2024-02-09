@@ -7,7 +7,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const CommentsTable = ({ comment, refetch }) => {
   const axiosSecure = useAxiosSecure();
 
-  const { _id, name, email, img, message } = comment || {};
+  const { _id, name, email, img, message, date } = comment || {};
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -36,27 +36,38 @@ const CommentsTable = ({ comment, refetch }) => {
       }
     });
   };
-
+  const smallId = _id.slice(0, 6);
   return (
     <>
-      <tr>
+      <tr className="flex flex-col md:flex-row justify-between">
         <td>
-          <div className="flex items-center gap-3">
+          <div className="w-[270px] flex items-center gap-5">
             <div className="avatar">
-              <div className="mask mask-squircle w-20 h-20">
+              <div className="w-20 rounded-xl">
                 <img src={img} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
+            <div className="flex flex-col">
+              <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
+              <p className="font-semibold text-base">{name}</p>
+              <p className="text-[#7E7E7E] text-xs">{date}</p>
+            </div>
           </div>
         </td>
-        <td>{name} </td>
-        <td>{email}</td>
-        <td>{message}</td>
         <td>
-          <MdDelete
-            className="text-4xl text-red-600"
+          <p className="text-left">{message}</p>
+        </td>
+        {/* <td>
+          <p>{email}</p>
+        </td> */}
+        <td>
+          <button
             onClick={() => handleDelete(_id)}
-          />
+            className="btn btn-outline text-red-600 font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
+          >
+            Delete
+          </button>
+
         </td>
       </tr>
     </>

@@ -11,30 +11,15 @@ const RoleChange = () => {
   const commonEmails = users.filter((user) =>
     owners.some((owner) => owner.ownerEmail === user.email)
   );
-  console.log(commonEmails);
+  // console.log(commonEmails);
 
   return (
     <>
-      {/* <div>
-      <h1 className="text-center text-3xl mb-4">Total users: {users.length}</h1>
-      <table className="overflow-x-auto table table-zebra-zebra w-full">
-        <thead className="bg-red-300">
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Change Roles</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <RoleChangeTable key={user._id} user={user} />
-          ))}
-        </tbody>
-      </table>
-    </div> */}
       <div className="overflow-x-auto">
-        <table className="table table-zebra">
+        <h1 className="text-center font-bold text-3xl my-3">
+          Role change Table
+        </h1>
+        <table className="table">
           {/* head */}
           <thead className="font-semibold text-lg text-[#002172]">
             <tr>
@@ -50,9 +35,6 @@ const RoleChange = () => {
             {commonEmails.map((item) => (
               <RoleChangeTable key={item._id} item={item} refetch={refetch} />
             ))}
-            {/* {users.map((user) => (
-              <RoleChangeTable key={user._id} user={user} owner={owners} />
-            ))} */}
           </tbody>
         </table>
       </div>

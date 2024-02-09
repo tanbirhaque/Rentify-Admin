@@ -5,7 +5,7 @@ import ReviewsTable from "./ReviewsTable";
 
 const Reviews = () => {
   //fetch reviews
-  const [reviews,refetch] = useReviews();
+  const [reviews, refetch] = useReviews();
   console.log(reviews);
   return (
     <>
@@ -15,19 +15,23 @@ const Reviews = () => {
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           {/* head */}
-          <thead className="font-semibold text-lg text-[#002172]">
+          {/* <thead className="font-semibold text-lg text-[#002172]">
             <tr>
               <th>Image</th>
               <th>Name</th>
               <th>Email</th>
               <th>Review</th>
-              {/* <th>Status</th> */}
+              <th>Status</th>
               <th>Action</th>
             </tr>
-          </thead>
+          </thead> */}
           <tbody>
             {reviews.map((review) => (
-              <ReviewsTable key={review._id} review={review} refetch={refetch}/>
+              <ReviewsTable
+                key={review._id}
+                review={review}
+                refetch={refetch}
+              />
             ))}
           </tbody>
         </table>

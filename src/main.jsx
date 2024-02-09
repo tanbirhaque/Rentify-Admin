@@ -14,6 +14,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Private from "./Provider/Private.jsx";
 import Comments from "./DashLayout/Comments/Comments.jsx";
 import Reviews from "./DashLayout/Reviews/Reviews.jsx";
+import ErrorPage from "./Error/ErrorPage.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -23,8 +24,16 @@ const router = createBrowserRouter([
     children: [],
   },
   {
+    path: "*",
+    element: <ErrorPage />,
+  },
+  {
     path: "register",
     element: <Register />,
+  },
+  {
+    path: "login",
+    element: <Login />,
   },
   {
     path: "reset",

@@ -1,33 +1,35 @@
 import { NavLink } from "react-router-dom";
 import "./Profile.css";
+import useAuth from "../../../Hooks/useAuth";
 
 const Profile = () => {
+  const { user } = useAuth();
   return (
-    <div className="holder w-[1350px]  mx-auto">
-      <div className="card  h-[400px] border-t  hover:shadow-none relative flex flex-col mx-auto m-5">
-        <div className="w-full ">
+    <div className="holder w-[1350px] mx-auto">
+      <div className="card h-[400px] border-t hover:shadow-none relative flex flex-col mx-auto m-5">
+        <div className="w-full">
           <img
-            className=" w-full rounded-t-lg h-[200px]  opacity-80"
+            className=" w-full rounded-t-lg h-[200px]"
             style={{ zIndex: -1 }}
             src="https://dash-ui-admin-template.vercel.app/images/background/profile-cover.jpg?fbclid=IwAR33hMTT9POzg0spN-quLZSjRPLq_oZTMeyWR3I3Zjt9Jg7R-5ZEv8XsaYY"
-            alt=""
+            // src="https://i.ibb.co/dBGK7kY/Purple-Color-Gradient-Background-Material-Wallpaper-Hd-Poster-Background-Image-And-Wallpaper-for-Fre.jpg"
+            alt="cover-photo"
           />
         </div>
         <div className="profile w-full flex m-3 ml-4 text-white">
           <img
             className="w-36 h-36 p-1 bg-white rounded-full  absolute -mt-20 avatar online"
-            src="https://images.pexels.com/photos/61100/pexels-photo-61100.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb"
-            alt=""
+            // src="https://images.pexels.com/photos/61100/pexels-photo-61100.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb"
+            src={user?.photoURL}
+            alt="user image"
           />
           <span className="ml-8 left-28  absolute  w-5 h-5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full" />
         </div>
 
         <div>
           <div>
-            <h2 className="text-3xl ml-44 font-bold">Sarah Afrin</h2>
-            <h2 className="text-gray-600 ml-44 font-normal">
-              sarah@rentify.com
-            </h2>
+            <h2 className="text-3xl ml-44 font-bold">{user?.displayName}</h2>
+            <h2 className="text-gray-600 ml-44 font-normal">{user?.email}</h2>
             <div className="text-end -mt-16">
               <button
                 type="button"

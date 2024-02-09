@@ -3,8 +3,9 @@
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import Rating from "react-rating";
 
-const ReviewsTable = ({ review ,refetch}) => {
+const ReviewsTable = ({ review, refetch }) => {
   const axiosSecure = useAxiosSecure();
 
   const {
@@ -13,9 +14,11 @@ const ReviewsTable = ({ review ,refetch}) => {
     reviewerEmail,
     reviewerName,
     reviewerImage,
-    reviewerText,
+    reviewText,
     reviewImage,
     reviewRating,
+    propertyTitle,
+    date,
   } = review || {};
   const handleDelete = (id) => {
     console.log(id);
@@ -46,28 +49,55 @@ const ReviewsTable = ({ review ,refetch}) => {
       }
     });
   };
+  const smallId = propertyId.slice(0, 6);
 
   return (
     <>
-      <tr>
+      <tr className="flex flex-col md:flex-row justify-between">
         <td>
-          <div className="flex items-center gap-3">
+          <div className="w-52 flex items-center gap-5">
             <div className="avatar">
-              <div className="mask mask-squircle w-20 h-20">
+              <div className="w-20 rounded-xl">
                 <img src={reviewerImage} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
+            <div className="flex flex-col">
+              <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
+              <p className="font-semibold text-base">{reviewerName}</p>
+              <p className="text-[#7E7E7E] text-xs">{date}</p>
+            </div>
           </div>
         </td>
-        <td>{reviewerName} </td>
-        <td>{reviewerEmail}</td>
-        <td>{reviewerText}</td>
-        {/* <td>Pending</td> */}
         <td>
-          <MdDelete
-            className="text-4xl text-red-600"
-            onClick={() => handleDelete(_id)}
+          <div className="flex flex-col">
+            <p className=" font-bold text-base">
+              Property Title:{" "}
+              <span className="text-teal-600">{propertyTitle}</span>
+            </p>
+            <p className="text-left">
+              <span className="font-bold">Review:</span> {reviewText}
+            </p>
+          </div>
+          {/* <p className=" font-semibold text-base">{propertyTitle}</p>
+          <p className="text-left">{reviewText}</p> */}
+        </td>
+        {/* <td>
+          <p className=" font-semibold text-base">{propertyTitle}</p>
+        </td> */}
+        <td>
+          <Rating
+            emptySymbol="fa fa-star-o fa-2x"
+            fullSymbol="fa fa-star fa-2x"
+            initialRating={reviewRating}
           />
+        </td>
+        <td>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-outline text-red-600 font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </>
