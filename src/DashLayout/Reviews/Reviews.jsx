@@ -13,7 +13,7 @@ const Reviews = () => {
         Reviews from Users
       </h1>
       <div className="overflow-x-auto">
-        <table className="table table-zebra">
+        <table className="table">
           {/* head */}
           {/* <thead className="font-semibold text-lg text-[#002172]">
             <tr>

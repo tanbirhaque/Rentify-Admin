@@ -15,10 +15,8 @@ const RoleChange = () => {
 
   return (
     <>
+      <h1 className="text-center font-bold text-3xl my-3">Role change Table</h1>
       <div className="overflow-x-auto">
-        <h1 className="text-center font-bold text-3xl my-3">
-          Role change Table
-        </h1>
         <table className="table">
           {/* head */}
           <thead className="font-semibold text-lg text-[#002172]">

@@ -69,8 +69,8 @@ const ReviewsTable = ({ review, refetch }) => {
           </div>
         </td>
         <td>
-          <div className="flex flex-col">
-            <p className=" font-bold text-base">
+          <div className="flex flex-col text-lg">
+            <p className=" font-bold text-xl">
               Property Title:{" "}
               <span className="text-teal-600">{propertyTitle}</span>
             </p>
@@ -78,12 +78,7 @@ const ReviewsTable = ({ review, refetch }) => {
               <span className="font-bold">Review:</span> {reviewText}
             </p>
           </div>
-          {/* <p className=" font-semibold text-base">{propertyTitle}</p>
-          <p className="text-left">{reviewText}</p> */}
         </td>
-        {/* <td>
-          <p className=" font-semibold text-base">{propertyTitle}</p>
-        </td> */}
         <td>
           <Rating
             emptySymbol="fa fa-star-o fa-2x"
@@ -94,7 +89,7 @@ const ReviewsTable = ({ review, refetch }) => {
         <td>
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-outline text-red-600 font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
+            className="btn btn-outline text-red-600 font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg text-lg"
           >
             Delete
           </button>

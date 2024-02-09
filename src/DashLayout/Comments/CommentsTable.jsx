@@ -39,9 +39,9 @@ const CommentsTable = ({ comment, refetch }) => {
   const smallId = _id.slice(0, 6);
   return (
     <>
-      <tr className="flex flex-col md:flex-row justify-between">
+      <tr className="flex flex-col md:flex-row justify-between gap-10">
         <td>
-          <div className="w-[270px] flex items-center gap-5">
+          <div className="w-60 flex items-center gap-5">
             <div className="avatar">
               <div className="w-20 rounded-xl">
                 <img src={img} alt="Avatar Tailwind CSS Component" />
@@ -55,7 +55,7 @@ const CommentsTable = ({ comment, refetch }) => {
           </div>
         </td>
         <td>
-          <p className="text-left">{message}</p>
+          <p className="text-left text-xl">{message}</p>
         </td>
         {/* <td>
           <p>{email}</p>
@@ -63,11 +63,10 @@ const CommentsTable = ({ comment, refetch }) => {
         <td>
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-outline text-red-600 font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
+            className="btn btn-outline text-red-600 text-lg font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
           >
             Delete
           </button>
-
         </td>
       </tr>
     </>
