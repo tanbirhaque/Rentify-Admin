@@ -18,7 +18,7 @@ const DashLayout = () => {
       <div className="flex">
         {/* Sidebar of dashboard starts here */}
         <div
-          className={`side_bar bg-gray-800 min-h-screen fixed w-64  text-white transition-all duration-300 ${isSidebarOpen ? "" : "-ml-64"
+          className={`side_bar bg-[#0f172a] min-h-screen fixed w-64  text-white transition-all duration-300 ${isSidebarOpen ? "" : "-ml-64"
             }`}
         >
           <SideBar></SideBar>
