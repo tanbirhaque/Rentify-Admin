@@ -6,17 +6,17 @@ import {
   FaUserCircle,
   FaRegClone,
   FaUserEdit,
+  FaRegCommentDots,
 } from "react-icons/fa";
 import { IoAddCircleSharp, IoBookmarksSharp } from "react-icons/io5";
 import {
   MdOutlinePendingActions,
   MdOutlineRemoveShoppingCart,
 } from "react-icons/md";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
-import { MdManageHistory } from "react-icons/md";
-import { HiCubeTransparent } from "react-icons/hi2";
-import { CiShoppingTag } from "react-icons/ci";
-import { FaChevronDown } from "react-icons/fa6";
+import {
+  MdOutlineDashboardCustomize,
+  MdOutlineRateReview,
+} from "react-icons/md";
 
 const SideBar = () => {
   const sideLinks = (
@@ -26,15 +26,29 @@ const SideBar = () => {
           to="/dashboard/profile"
           className="dashNav flex items-center gap-2"
         >
-          <FaUserCircle className="dashIcon text-[#64707d]"></FaUserCircle>
+          <FaUserCircle className="dashIcon text-[#64707d]" />
           Profile
         </NavLink>
         <NavLink
           to="/dashboard/user"
           className="dashNav flex items-center gap-2"
         >
-          <FaUserEdit className="dashIcon text-[#64707d]"></FaUserEdit>
-          User Management
+          <FaUserEdit className="dashIcon text-[#64707d]" />
+          Owner Requests
+        </NavLink>
+        <NavLink
+          to="/dashboard/reviews"
+          className="dashNav flex items-center gap-2"
+        >
+          <MdOutlineRateReview className="dashIcon text-[#64707d]" />
+          Reviews
+        </NavLink>
+        <NavLink
+          to="/dashboard/comments"
+          className="dashNav flex items-center gap-2"
+        >
+          <FaRegCommentDots className="dashIcon text-[#64707d]" />
+          Comments
         </NavLink>
       </li>
     </>
