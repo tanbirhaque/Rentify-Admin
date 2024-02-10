@@ -15,12 +15,18 @@ import Private from "./Provider/Private.jsx";
 import Comments from "./DashLayout/Comments/Comments.jsx";
 import Reviews from "./DashLayout/Reviews/Reviews.jsx";
 import ErrorPage from "./Error/ErrorPage.jsx";
+import Ca from "./DashLayout/User Manage/Ca.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: (
+      <Private>
+        <DashLayout />
+      </Private>
+    ),
+    // element: <Login />,
     children: [],
   },
   {
@@ -63,7 +69,7 @@ const router = createBrowserRouter([
       {
         path: "comments",
         element: <Comments />,
-      },
+      }
     ],
   },
 ]);

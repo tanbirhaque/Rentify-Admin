@@ -34,7 +34,7 @@ const SideBar = () => {
           className="dashNav flex items-center gap-2"
         >
           <FaUserEdit className="dashIcon text-[#64707d]" />
-          Owner Requests
+          All Owners
         </NavLink>
         <NavLink
           to="/dashboard/reviews"
