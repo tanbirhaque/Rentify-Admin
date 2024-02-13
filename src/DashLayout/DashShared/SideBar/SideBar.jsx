@@ -1,84 +1,115 @@
-import './SideBar.css'
-import { Link, NavLink } from 'react-router-dom';
-import { FaBookmark, FaHome, FaUserCircle, FaRegClone } from "react-icons/fa";
+import "./SideBar.css";
+import { Link, NavLink } from "react-router-dom";
+import {
+  FaBookmark,
+  FaHome,
+  FaUserCircle,
+  FaRegClone,
+  FaUserEdit,
+  FaRegCommentDots,
+} from "react-icons/fa";
 import { IoAddCircleSharp, IoBookmarksSharp } from "react-icons/io5";
-import { MdOutlinePendingActions, MdOutlineRemoveShoppingCart } from "react-icons/md";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
-import { MdManageHistory } from "react-icons/md";
-import { HiCubeTransparent } from 'react-icons/hi2';
-import { CiShoppingTag } from 'react-icons/ci';
-import { FaChevronDown } from "react-icons/fa6";
+import {
+  MdOutlinePendingActions,
+  MdOutlineRemoveShoppingCart,
+} from "react-icons/md";
+import {
+  MdOutlineDashboardCustomize,
+  MdOutlineRateReview,
+} from "react-icons/md";
 
 const SideBar = () => {
-  const sideLinks = <>
+  const sideLinks = (
+    <>
       <li className="dashLi">
         <NavLink
           to="/dashboard/profile"
           className="dashNav flex items-center gap-2"
         >
-          <FaUserCircle className="dashIcon text-[#64707d]"></FaUserCircle>
+          <FaUserCircle className="dashIcon text-[#64707d]" />
           Profile
+        </NavLink>
+        <NavLink
+          to="/dashboard/user"
+          className="dashNav flex items-center gap-2"
+        >
+          <FaUserEdit className="dashIcon text-[#64707d]" />
+          All Owners
+        </NavLink>
+        <NavLink
+          to="/dashboard/reviews"
+          className="dashNav flex items-center gap-2"
+        >
+          <MdOutlineRateReview className="dashIcon text-[#64707d]" />
+          Reviews
+        </NavLink>
+        <NavLink
+          to="/dashboard/comments"
+          className="dashNav flex items-center gap-2"
+        >
+          <FaRegCommentDots className="dashIcon text-[#64707d]" />
+          Comments
         </NavLink>
       </li>
     </>
+  );
 
-
-    // const ownerRoutes = <>
-    //     <li className="dashLi">
-    //         <NavLink
-    //             to="/dashboard/add"
-    //             className="dashNav flex items-center gap-2"
-    //         >
-    //             <IoAddCircleSharp className="dashIcon text-[#64707d]"></IoAddCircleSharp >
-    //             Add Properties
-    //         </NavLink>
-    //     </li>
-    //     <li className="dashLi pt-2">
-    //         <NavLink
-    //             to="/dashboard/manage"
-    //             className="dashNav flex items-center gap-2"
-    //         >
-    //             <MdManageHistory className="dashIcon text-[#64707d]"></MdManageHistory>
-    //             Manage Properties
-    //         </NavLink>
-    //     </li>
-    //     <li className="dashLi pt-2">
-    //         <NavLink
-    //             to="/dashboard/rentReq"
-    //             className="dashNav flex items-center gap-2"
-    //         >
-    //             <HiCubeTransparent className="dashIcon text-[#64707d]"> </HiCubeTransparent>
-    //             Rent Request
-    //         </NavLink>
-    //     </li>
-    //     <li className="dashLi pt-2">
-    //         <NavLink
-    //             to="/dashboard/buyReq"
-    //             className="dashNav flex items-center gap-2"
-    //         >
-    //             <CiShoppingTag className="dashIcon text-[#64707d]"></CiShoppingTag>
-    //             Buy Request
-    //         </NavLink>
-    //     </li>
-    //     <li className="dashLi pt-2">
-    //         <NavLink
-    //             to="/dashboard/soldProperties"
-    //             className="dashNav flex items-center gap-2"
-    //         >
-    //             <MdOutlineRemoveShoppingCart className="dashIcon text-[#64707d]"></MdOutlineRemoveShoppingCart>
-    //            Sold Out Properties
-    //         </NavLink>
-    //     </li>
-    //     <li className="dashLi pt-2">
-    //         <NavLink
-    //             to="/dashboard/rentOutProperties"
-    //             className="dashNav flex items-center gap-2"
-    //         >
-    //             <IoBookmarksSharp className="dashIcon text-[#64707d]"></IoBookmarksSharp>
-    //             Rent Out Properties
-    //         </NavLink>
-    //     </li>
-    // </>
+  // const ownerRoutes = <>
+  //     <li className="dashLi">
+  //         <NavLink
+  //             to="/dashboard/add"
+  //             className="dashNav flex items-center gap-2"
+  //         >
+  //             <IoAddCircleSharp className="dashIcon text-[#64707d]"></IoAddCircleSharp >
+  //             Add Properties
+  //         </NavLink>
+  //     </li>
+  //     <li className="dashLi pt-2">
+  //         <NavLink
+  //             to="/dashboard/manage"
+  //             className="dashNav flex items-center gap-2"
+  //         >
+  //             <MdManageHistory className="dashIcon text-[#64707d]"></MdManageHistory>
+  //             Manage Properties
+  //         </NavLink>
+  //     </li>
+  //     <li className="dashLi pt-2">
+  //         <NavLink
+  //             to="/dashboard/rentReq"
+  //             className="dashNav flex items-center gap-2"
+  //         >
+  //             <HiCubeTransparent className="dashIcon text-[#64707d]"> </HiCubeTransparent>
+  //             Rent Request
+  //         </NavLink>
+  //     </li>
+  //     <li className="dashLi pt-2">
+  //         <NavLink
+  //             to="/dashboard/buyReq"
+  //             className="dashNav flex items-center gap-2"
+  //         >
+  //             <CiShoppingTag className="dashIcon text-[#64707d]"></CiShoppingTag>
+  //             Buy Request
+  //         </NavLink>
+  //     </li>
+  //     <li className="dashLi pt-2">
+  //         <NavLink
+  //             to="/dashboard/soldProperties"
+  //             className="dashNav flex items-center gap-2"
+  //         >
+  //             <MdOutlineRemoveShoppingCart className="dashIcon text-[#64707d]"></MdOutlineRemoveShoppingCart>
+  //            Sold Out Properties
+  //         </NavLink>
+  //     </li>
+  //     <li className="dashLi pt-2">
+  //         <NavLink
+  //             to="/dashboard/rentOutProperties"
+  //             className="dashNav flex items-center gap-2"
+  //         >
+  //             <IoBookmarksSharp className="dashIcon text-[#64707d]"></IoBookmarksSharp>
+  //             Rent Out Properties
+  //         </NavLink>
+  //     </li>
+  // </>
 
   return (
     <div>
@@ -98,8 +129,8 @@ const SideBar = () => {
         </div>
         {/* Sidebar Contents (Routes of dashboard) starts here */}
         <div className="p-4">
-          <span className="flex gap-5">
-            <NavLink to="/" className="flex items-center gap-2">
+          <span className="flex gap-2 items-center">
+            {/* <NavLink to="/" className="flex items-center gap-2">
               <FaHome></FaHome>
               Home
             </NavLink>
@@ -107,7 +138,9 @@ const SideBar = () => {
             <h3 className="flex items-center gap-2">
               <MdOutlineDashboardCustomize />
               Dashboard
-            </h3>
+            </h3> */}
+            <MdOutlineDashboardCustomize />
+            Admin Dashboard
           </span>
           <hr className="mb-3" />
           <ul className="flex flex-col gap-2">{sideLinks}</ul>

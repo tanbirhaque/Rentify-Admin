@@ -6,6 +6,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import PropTypes from "prop-types";
@@ -55,7 +56,12 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
-  
+
+  //logout
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
   const authInfo = {
     loading,
     googleLogin,
@@ -64,6 +70,7 @@ const AuthProvider = ({ children }) => {
     user,
     userProfile,
     resetPass,
+    logOut,
   };
 
   return (
