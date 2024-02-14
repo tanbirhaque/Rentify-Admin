@@ -85,7 +85,6 @@ const router = createBrowserRouter([
         path: "property-verification",
         element: <AllProperties />,
       },
-      }
     ],
   },
 ]);
