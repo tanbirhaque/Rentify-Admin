@@ -1,26 +1,10 @@
 /* Tab css added by tanbir */
 
-/* listing tab CSS style v-0.1 */
-/* .react-tabs__tab-list{
-    border-bottom: 1px solid #002172 !important;
-}
-.react-tabs__tab--selected{
-    border-color: #002172;
-    color: #002172 !important;
-    font-weight: 700;
-    border: 1px solid #002172 !important;
-    border-bottom: 0px !important;
-}
-
-.react-tabs__tab{
-    color: #e33226;
-} */
-
 
 /* listing tab CSS style v-0.2 */
-.react-tabs__tab-list {
+/* .react-tabs__tab-list {
     border-bottom: none;
-}
+} */
 
 .react-tabs__tab--selected {
     color: #e33226 !important;
