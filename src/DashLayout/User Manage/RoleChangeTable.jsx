@@ -41,7 +41,7 @@ const RoleChangeTable = ({ item, refetch }) => {
       }
     });
   };
-  
+
   const handleMakeUser = (id) => {
     Swal.fire({
       position: "top",
