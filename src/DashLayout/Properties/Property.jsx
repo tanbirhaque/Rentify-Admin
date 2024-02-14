@@ -70,7 +70,7 @@ const Property = ({ property, refetch }) => {
   return (
     <>
       <tr className="flex flex-col md:flex-row justify-between gap-10">
-        <td>
+        <td className="my-5">
           <div className="w-60 flex items-center gap-5">
             <div className="avatar">
               <div className="w-20 rounded-xl">
@@ -116,6 +116,20 @@ const Property = ({ property, refetch }) => {
             </>
           )}
         </td>
+        {verify_status === "verified" && (
+          <td>
+            <p className="text-green-800 font-semibold text-lg text-center">
+              Verified
+            </p>
+          </td>
+        )}
+        {verify_status === "declined" && (
+          <td>
+            <p className="text-red-700 font-semibold text-lg text-center">
+              Declined
+            </p>
+          </td>
+        )}
       </tr>
     </>
   );
