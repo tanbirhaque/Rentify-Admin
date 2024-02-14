@@ -14,7 +14,7 @@ class PieChart extends Component {
           width: 380,
           type: "pie",
         },
-        labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+        labels: ["Residential", "Commercial", "Apartment", "Sale", "Rent"],
         responsive: [
           {
             breakpoint: 480,
