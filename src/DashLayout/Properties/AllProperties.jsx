@@ -32,7 +32,6 @@ const AllProperties = () => {
   return (
     <div className="p-5">
       <h1 className="text-center font-bold text-3xl my-3">Property Requests</h1>
-
       {/* tabs according to status */}
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
