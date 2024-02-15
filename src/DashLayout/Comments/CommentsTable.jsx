@@ -7,7 +7,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const CommentsTable = ({ comment, refetch }) => {
   const axiosSecure = useAxiosSecure();
 
-  const { _id, name, email, img, message, date } = comment || {};
+  const { _id, name, email, img, message, date, blogName } = comment || {};
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -55,7 +55,8 @@ const CommentsTable = ({ comment, refetch }) => {
           </div>
         </td>
         <td>
-          <p className="text-left text-xl">{message}</p>
+          <p className="text-[#3B4CB8] text-sm font-semibold">{blogName}</p>
+          <p className="text-[#7E7E7E] text-base">{message}</p>
         </td>
         {/* <td>
           <p>{email}</p>
