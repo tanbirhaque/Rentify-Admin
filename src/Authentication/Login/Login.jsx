@@ -15,7 +15,7 @@ const Login = () => {
     register,
     handleSubmit,
     // watch,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
@@ -73,7 +73,7 @@ const Login = () => {
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="email"
                   placeholder="Email address here"
-                  {...register("email")}
+                  {...register("email", { required: true })}
                   required
                 />
               </div>
@@ -85,7 +85,7 @@ const Login = () => {
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="password"
                   placeholder="**************"
-                  {...register("password")}
+                  {...register("password", { required: true })}
                   required
                 />
               </div>

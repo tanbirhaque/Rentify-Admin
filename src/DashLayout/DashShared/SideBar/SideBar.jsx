@@ -6,7 +6,6 @@ import {
   MdOutlineDashboardCustomize,
   MdOutlineRateReview,MdDomainVerification
 } from "react-icons/md";
-import { FcAcceptDatabase,FcDeleteDatabase } from "react-icons/fc";
 
 
 const SideBar = () => {
@@ -21,7 +20,7 @@ const SideBar = () => {
           Profile
         </NavLink>
         <NavLink
-          to="/dashboard/user"
+          to="/dashboard/owners"
           className="dashNav flex items-center gap-2"
         >
           <FaUserEdit className="dashIcon text-[#64707d]" />

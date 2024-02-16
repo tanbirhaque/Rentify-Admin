@@ -47,7 +47,7 @@ const BlogTable = ({ blog, refetch }) => {
           <div className="min-w-full flex items-center gap-5">
             <div className="avatar">
               <div className="w-20 rounded-xl">
-                <img src={img} alt="Avatar Tailwind CSS Component" />
+                <img src={img} alt="image of the blog" />
               </div>
             </div>
             <div className="w-full flex flex-col">
