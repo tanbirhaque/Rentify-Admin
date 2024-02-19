@@ -18,7 +18,6 @@ import Blogs from "./DashLayout/DashboardRoutes/Profile/Blogs/Blogs.jsx";
 import AllProperties from "./DashLayout/Properties/AllProperties.jsx";
 import Profile from "./DashLayout/DashboardRoutes/Profile/Profile/Profile.jsx";
 
-
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {

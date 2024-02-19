@@ -8,6 +8,7 @@
 
 .react-tabs__tab--selected {
     color: #e33226 !important;
+    background-color: #f5f5f5;
     font-weight: 500;
     border: none;
     position: relative;
