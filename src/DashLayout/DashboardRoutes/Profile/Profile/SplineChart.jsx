@@ -39,11 +39,7 @@ class SplineChart extends Component {
             "May",
             "Jun",
             "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
+           
           ],
         },
         tooltip: {

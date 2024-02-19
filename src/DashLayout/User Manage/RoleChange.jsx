@@ -21,10 +21,13 @@ const RoleChange = () => {
   console.log(approved);
 
   return (
-    <div className="p-5">
-      <h1 className="text-center font-bold text-3xl my-3">
-        Requests for Owner
-      </h1>
+    <div className="p-5 bg-[#f5f5f5] h-screen space-y-5">
+      <div className="shadow-lg bg-[#ffffff] rounded-lg p-5 space-y-2">
+        <h1 className="font-bold text-xl text-[#002172]">Requests for Owner</h1>
+        <p className="text-xs font-medium">
+          Dashboard / <span className="text-[#ec3323]">All Owners</span>
+        </p>
+      </div>
       {/* tabs according to status */}
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>

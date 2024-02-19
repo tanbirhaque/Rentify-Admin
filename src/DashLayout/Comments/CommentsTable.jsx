@@ -1,6 +1,5 @@
 //component added by "Fahima"
 
-import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
@@ -44,7 +43,7 @@ const CommentsTable = ({ comment, refetch }) => {
           <div className="w-60 flex items-center gap-5">
             <div className="avatar">
               <div className="w-20 rounded-xl">
-                <img src={img} alt="Avatar Tailwind CSS Component" />
+                <img src={img} alt="image of the commenter" />
               </div>
             </div>
             <div className="flex flex-col">

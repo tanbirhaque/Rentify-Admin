@@ -74,7 +74,7 @@ const Property = ({ property, refetch }) => {
           <div className="w-60 flex items-center gap-5">
             <div className="avatar">
               <div className="w-20 rounded-xl">
-                <img src={property_img} alt="Avatar Tailwind CSS Component" />
+                <img src={property_img} alt="image of the property" />
               </div>
             </div>
             <div className="flex flex-col">
