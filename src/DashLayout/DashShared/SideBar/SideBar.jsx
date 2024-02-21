@@ -1,22 +1,12 @@
 import "./SideBar.css";
 import { Link, NavLink } from "react-router-dom";
-import {
-  FaBookmark,
-  FaHome,
-  FaUserCircle,
-  FaRegClone,
-  FaUserEdit,
-  FaRegCommentDots,
-} from "react-icons/fa";
-import { IoAddCircleSharp, IoBookmarksSharp } from "react-icons/io5";
-import {
-  MdOutlinePendingActions,
-  MdOutlineRemoveShoppingCart,
-} from "react-icons/md";
+import { FaUserCircle, FaUserEdit, FaRegCommentDots } from "react-icons/fa";
+import { ImBlog } from "react-icons/im";
 import {
   MdOutlineDashboardCustomize,
-  MdOutlineRateReview,
+  MdOutlineRateReview,MdDomainVerification
 } from "react-icons/md";
+
 
 const SideBar = () => {
   const sideLinks = (
@@ -30,7 +20,7 @@ const SideBar = () => {
           Profile
         </NavLink>
         <NavLink
-          to="/dashboard/user"
+          to="/dashboard/owners"
           className="dashNav flex items-center gap-2"
         >
           <FaUserEdit className="dashIcon text-[#64707d]" />
@@ -44,11 +34,25 @@ const SideBar = () => {
           Reviews
         </NavLink>
         <NavLink
+          to="/dashboard/blogs"
+          className="dashNav flex items-center gap-2"
+        >
+          <ImBlog className="dashIcon text-[#64707d]" />
+          Blogs
+        </NavLink>
+        <NavLink
           to="/dashboard/comments"
           className="dashNav flex items-center gap-2"
         >
           <FaRegCommentDots className="dashIcon text-[#64707d]" />
           Comments
+        </NavLink>
+        <NavLink
+          to="/dashboard/property-verification"
+          className="dashNav flex items-center gap-2"
+        >
+          <MdDomainVerification className="dashIcon text-[#64707d]" />
+          Property Verification
         </NavLink>
       </li>
     </>

@@ -1,13 +1,12 @@
 //component added by "Fahima"
 
-import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const CommentsTable = ({ comment, refetch }) => {
   const axiosSecure = useAxiosSecure();
 
-  const { _id, name, email, img, message, date } = comment || {};
+  const { _id, name, email, img, message, date, blogName } = comment || {};
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -44,7 +43,7 @@ const CommentsTable = ({ comment, refetch }) => {
           <div className="w-60 flex items-center gap-5">
             <div className="avatar">
               <div className="w-20 rounded-xl">
-                <img src={img} alt="Avatar Tailwind CSS Component" />
+                <img src={img} alt="image of the commenter" />
               </div>
             </div>
             <div className="flex flex-col">
@@ -55,7 +54,8 @@ const CommentsTable = ({ comment, refetch }) => {
           </div>
         </td>
         <td>
-          <p className="text-left text-xl">{message}</p>
+          <p className="text-[#3B4CB8] text-sm font-semibold">{blogName}</p>
+          <p className="text-[#7E7E7E] text-base">{message}</p>
         </td>
         {/* <td>
           <p>{email}</p>

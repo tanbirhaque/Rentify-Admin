@@ -1,6 +1,5 @@
 //component added by "Fahima"
 
-import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Rating from "react-rating";
@@ -55,10 +54,11 @@ const ReviewsTable = ({ review, refetch }) => {
     <>
       <tr className="flex flex-col md:flex-row justify-between">
         <td>
+          {/* reviewer details */}
           <div className="w-52 flex items-center gap-5">
             <div className="avatar">
               <div className="w-20 rounded-xl">
-                <img src={reviewerImage} alt="Avatar Tailwind CSS Component" />
+                <img src={reviewerImage} alt="reviewer image" />
               </div>
             </div>
             <div className="flex flex-col">
@@ -69,14 +69,17 @@ const ReviewsTable = ({ review, refetch }) => {
           </div>
         </td>
         <td>
+          {/* review details */}
           <div className="flex flex-col text-lg">
-            <p className=" font-bold text-xl">
-              Property Title:{" "}
-              <span className="text-teal-600">{propertyTitle}</span>
-            </p>
-            <p className="text-left">
-              <span className="font-bold">Review:</span> {reviewText}
-            </p>
+            <div>
+              <p className=" font-bold text-xl">
+                Property Title:{" "}
+                <span className="text-teal-600">{propertyTitle}</span>
+              </p>
+              <p className="text-left">
+                <span className="font-bold">Review:</span> {reviewText}
+              </p>
+            </div>
           </div>
         </td>
         <td>
