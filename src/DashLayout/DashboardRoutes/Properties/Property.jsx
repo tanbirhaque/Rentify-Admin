@@ -1,10 +1,16 @@
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const Property = ({ property, refetch }) => {
   const { _id, property_info } = property || {};
-  const { owner_details, property_img, property_title, verify_status } =
-    property_info || {};
+  const {
+    owner_details,
+    property_img,
+    property_title,
+    property_details,
+    verify_status,
+    property_location,
+  } = property_info || {};
   const smallId = _id.slice(0, 6);
 
   const axiosSecure = useAxiosSecure();

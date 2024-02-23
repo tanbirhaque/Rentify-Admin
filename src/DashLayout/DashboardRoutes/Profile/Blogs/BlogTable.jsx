@@ -42,7 +42,7 @@ const BlogTable = ({ blog, refetch }) => {
 
   return (
     <>
-      <tr className="max-w-full grid grid-cols-4">
+      <tr className="max-w-full grid grid-cols-4 bg-[#ffffff]">
         <td className="w-full">
           <div className="min-w-full flex items-center gap-5">
             <div className="avatar">
@@ -66,7 +66,7 @@ const BlogTable = ({ blog, refetch }) => {
             {details}
           </p>
         </td>
-        <td className="flex justify-end">
+        <td className="flex justify-center">
           <button
             onClick={() => handleDelete(_id)}
             className="btn btn-outline text-red-600 text-lg font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"

@@ -15,4 +15,5 @@ const useGetUsers = () => {
   return [users, refetch];
 };
 
+
 export default useGetUsers;

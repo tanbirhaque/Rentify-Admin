@@ -55,7 +55,7 @@ const DashNav = ({ toggleSidebar }) => {
           <li>
             <Link to="/dashboard/profile" className="justify-between">
               Profile
-              <span className="badge">New</span>
+             
             </Link>
           </li>
           <li>

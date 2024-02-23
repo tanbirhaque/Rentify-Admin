@@ -3,7 +3,7 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../Properties/tab.css";
-import useOwners from "../../Hooks/useOwners";
+import useOwners from "../../../Hooks/useOwners";
 import RoleChangeTable from "./RoleChangeTable";
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ const RoleChange = () => {
   console.log(approved);
 
   return (
-    <div className="p-5 bg-[#f5f5f5] h-screen space-y-5">
+    <div className="p-5 bg-[#f5f5f5] min-h-[90vh] space-y-5">
       <div className="shadow-lg bg-[#ffffff] rounded-lg p-5 space-y-2">
         <h1 className="font-bold text-xl text-[#002172]">Requests for Owner</h1>
         <p className="text-xs font-medium">

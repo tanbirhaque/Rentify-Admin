@@ -7,6 +7,8 @@ import { MdOutlineHomeWork } from "react-icons/md";
 import { TbBolt, TbHomePlus } from "react-icons/tb";
 import SplineChart from "./SplineChart";
 import PieChart from "./PieChart";
+// import useGetUsers from "../../../../Hooks/useGetUsers";
+// import useProperties from "../../../../Hooks/useProperties";
 
 const Profile = () => {
   const { user } = useAuth();
@@ -53,6 +55,7 @@ const Profile = () => {
         <div className="flex justify-between bg-white gap-5 rounded-md p-5 border-2">
           <div>
             <p className="text-base text-slate-400">Properties for sell</p>
+
             <p className=" text-2xl  font-medium">45,890</p>
           </div>
           <div className="bg-[#f8fafc] w-12 h-12 flex items-center justify-center text-[#16a34a] text-2xl rounded-lg">
@@ -73,7 +76,7 @@ const Profile = () => {
       {/* chart */}
       <div className="flex flex-col md:flex-row justify-between gap-5">
         {/* spline chart */}
-        <div className="w-auto md:w-3/5 p-5 rounded-lg  border-2">
+        <div className="w-auto md:w-3/5 p-5 rounded-lg bg-[#ffffff] border-2">
           <div className="flex flex-col md:flex-row justify-between items-center my-5 ">
             <h6 className="text-lg font-semibold">Revenue Analytics</h6>
             <select className="select-bordered select w-auto">
@@ -89,7 +92,7 @@ const Profile = () => {
           <SplineChart />
         </div>
         {/* pie chart */}
-        <div className="w-auto md:w-2/5 bg-white p-5 rounded-lg  border-2">
+        <div className="w-auto md:w-2/5 bg-[#ffffff] p-5 rounded-lg  border-2">
           <div className="flex flex-col md:flex-row justify-between items-center my-5 ">
             <h6 className="text-lg font-semibold">Sales Data</h6>
             <select className="select-bordered select w-auto">

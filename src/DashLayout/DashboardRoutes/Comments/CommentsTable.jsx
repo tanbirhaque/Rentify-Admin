@@ -1,7 +1,7 @@
 //component added by "Fahima"
 
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const CommentsTable = ({ comment, refetch }) => {
   const axiosSecure = useAxiosSecure();
@@ -38,7 +38,7 @@ const CommentsTable = ({ comment, refetch }) => {
   const smallId = _id.slice(0, 6);
   return (
     <>
-      <tr className="flex flex-col md:flex-row justify-between gap-10">
+      <tr className="flex flex-col md:flex-row justify-between gap-10 bg-[#ffffff]">
         <td>
           <div className="w-60 flex items-center gap-5">
             <div className="avatar">

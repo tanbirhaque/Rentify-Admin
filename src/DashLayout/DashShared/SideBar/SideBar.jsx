@@ -58,62 +58,6 @@ const SideBar = () => {
     </>
   );
 
-  // const ownerRoutes = <>
-  //     <li className="dashLi">
-  //         <NavLink
-  //             to="/dashboard/add"
-  //             className="dashNav flex items-center gap-2"
-  //         >
-  //             <IoAddCircleSharp className="dashIcon text-[#64707d]"></IoAddCircleSharp >
-  //             Add Properties
-  //         </NavLink>
-  //     </li>
-  //     <li className="dashLi pt-2">
-  //         <NavLink
-  //             to="/dashboard/manage"
-  //             className="dashNav flex items-center gap-2"
-  //         >
-  //             <MdManageHistory className="dashIcon text-[#64707d]"></MdManageHistory>
-  //             Manage Properties
-  //         </NavLink>
-  //     </li>
-  //     <li className="dashLi pt-2">
-  //         <NavLink
-  //             to="/dashboard/rentReq"
-  //             className="dashNav flex items-center gap-2"
-  //         >
-  //             <HiCubeTransparent className="dashIcon text-[#64707d]"> </HiCubeTransparent>
-  //             Rent Request
-  //         </NavLink>
-  //     </li>
-  //     <li className="dashLi pt-2">
-  //         <NavLink
-  //             to="/dashboard/buyReq"
-  //             className="dashNav flex items-center gap-2"
-  //         >
-  //             <CiShoppingTag className="dashIcon text-[#64707d]"></CiShoppingTag>
-  //             Buy Request
-  //         </NavLink>
-  //     </li>
-  //     <li className="dashLi pt-2">
-  //         <NavLink
-  //             to="/dashboard/soldProperties"
-  //             className="dashNav flex items-center gap-2"
-  //         >
-  //             <MdOutlineRemoveShoppingCart className="dashIcon text-[#64707d]"></MdOutlineRemoveShoppingCart>
-  //            Sold Out Properties
-  //         </NavLink>
-  //     </li>
-  //     <li className="dashLi pt-2">
-  //         <NavLink
-  //             to="/dashboard/rentOutProperties"
-  //             className="dashNav flex items-center gap-2"
-  //         >
-  //             <IoBookmarksSharp className="dashIcon text-[#64707d]"></IoBookmarksSharp>
-  //             Rent Out Properties
-  //         </NavLink>
-  //     </li>
-  // </>
 
   return (
     <div>
@@ -149,58 +93,7 @@ const SideBar = () => {
           <hr className="mb-3" />
           <ul className="flex flex-col gap-2">{sideLinks}</ul>
 
-          {/* <h3 className="poppins-font font-semibold text-xl mt-5 text-gray-400">
-            Owner Routes
-          </h3> */}
-          {/* <hr className="mb-3" />
-          <ul>{ownerRoutes}</ul> */}
-          {/* drop-down -1*/}
-          {/* <div className="collapse ">
-            <input type="checkbox" />
-            <div className="text-[919EAB] hover:text-white collapse-title font-medium flex gap-1.5 items-center">
-              <FaRegClone />
-              Drop-down 1
-              <FaChevronDown />
-            </div>
-            <div className="collapse-content">
-              <p>
-                <Link>One</Link>
-              </p>
-              <p>
-                <Link>Two</Link>
-              </p>
-              <p>
-                <Link>Three</Link>
-              </p>
-              <p>
-                <Link>Four</Link>
-              </p>
-            </div>
-          </div> */}
-          {/* drop-down -2*/}
-          {/* <div className="collapse ">
-            <input type="checkbox" />
-            <div className="text-[919EAB] hover:text-white collapse-title font-medium flex gap-1.5 items-center">
-              <FaRegClone />
-              Drop-down 2
-              <FaChevronDown />
-            </div>
-            <div className="collapse-content">
-              <p>
-                <Link>One</Link>
-              </p>
-              <p>
-                <Link>Two</Link>
-              </p>
-              <p>
-                <Link>Three</Link>
-              </p>
-              <p>
-                <Link>Four</Link>
-              </p>
-            </div>
-          </div> */}
-          {/* drop-down*/}
+      
         </div>
       </div>
     </div>
