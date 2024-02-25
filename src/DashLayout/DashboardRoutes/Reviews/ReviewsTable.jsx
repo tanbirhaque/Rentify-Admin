@@ -1,8 +1,8 @@
 //component added by "Fahima"
 
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
-import Rating from "react-rating";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Rating } from "react-simple-star-rating";
 
 const ReviewsTable = ({ review, refetch }) => {
   const axiosSecure = useAxiosSecure();
@@ -52,7 +52,7 @@ const ReviewsTable = ({ review, refetch }) => {
 
   return (
     <>
-      <tr className="flex flex-col md:flex-row justify-between">
+      <tr className="flex flex-col md:flex-row justify-between bg-[#ffffff]">
         <td>
           {/* reviewer details */}
           <div className="w-52 flex items-center gap-5">
@@ -82,13 +82,10 @@ const ReviewsTable = ({ review, refetch }) => {
             </div>
           </div>
         </td>
-        <td>
-          <Rating
-            emptySymbol="fa fa-star-o fa-2x"
-            fullSymbol="fa fa-star fa-2x"
-            initialRating={reviewRating}
-          />
-        </td>
+        {/* <td>
+          <Rating initialValue={reviewRating} readonly />
+        </td> */}
+
         <td>
           <button
             onClick={() => handleDelete(_id)}

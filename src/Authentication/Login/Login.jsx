@@ -1,14 +1,15 @@
 //component added by "Fahima"
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import SocialLogin from "../Social/SocialLogin";
+// import SocialLogin from "../Social/SocialLogin";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   //login function
   //form data
   const {
@@ -30,7 +31,8 @@ const Login = () => {
           showConfirmButton: false,
           icon: "success",
         });
-        window.location.href = "/dashboard/profile";
+        // window.location.href = "/dashboard/profile";
+        navigate("/dashboard/profile");
       })
       .catch((err) => {
         console.log(err.message);
@@ -131,13 +133,11 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-              <SocialLogin />
+              {/* <SocialLogin /> */}
             </form>
           </div>
         </div>
       </div>
-
-      {/*  */}
     </div>
   );
 };

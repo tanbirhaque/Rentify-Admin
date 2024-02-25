@@ -1,6 +1,6 @@
 //component added by "Fahima"
 
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
 const RoleChangeTable = ({ item, owner, refetch }) => {

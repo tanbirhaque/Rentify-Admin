@@ -2,7 +2,7 @@
 
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import useProperties from "../../Hooks/useProperties";
+import useProperties from "../../../Hooks/useProperties";
 import Property from "./Property";
 import { useState } from "react";
 import "./tab.css";
@@ -30,11 +30,14 @@ const AllProperties = () => {
   );
 
   return (
-    <div className="p-5 bg-[#f5f5f5] h-screen space-y-5">
+    <div className="p-5 bg-[#f5f5f5] min-h-[90vh] space-y-5">
       <div className="shadow-lg bg-[#ffffff] rounded-lg p-5 space-y-2">
-        <h1 className="font-bold text-xl text-[#002172]">Property Verification</h1>
+        <h1 className="font-bold text-xl text-[#002172]">
+          Property Verification
+        </h1>
         <p className="text-xs font-medium">
-          Dashboard / <span className="text-[#ec3323]">Property Verification</span>
+          Dashboard /{" "}
+          <span className="text-[#ec3323]">Property Verification</span>
         </p>
       </div>
 
@@ -45,48 +48,61 @@ const AllProperties = () => {
           <Tab>Verified</Tab>
           <Tab>Declined</Tab>
         </TabList>
-        {/* tab for pending */}
-        <TabPanel>
-          <div className="">
+
+        {/*  */}
+        <div className="bg-[#ffffff] rounded-lg shadow-lg p-5 mt-10 mx-auto mb-20">
+          <table className="table overflow-scroll">
+            {/* head */}
+            <thead className="font-semibold text-lg text-[#002172]">
+              <tr>
+                <th>Property Info</th>
+                <th>Location</th>
+                <th>Owner Info</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+          </table>
+          {/*  */}
+
+          {/* tab for pending */}
+          <TabPanel>
             {pendingProperties.map((property, index) => (
-              <div key={index}>
+              <tbody key={index}>
                 <Property
                   property={property}
                   key={property._id}
                   refetch={refetch}
                 />
-              </div>
+              </tbody>
             ))}
-          </div>
-        </TabPanel>
-        {/* tab for verified */}
-        <TabPanel>
-          <div className="">
+          </TabPanel>
+          {/* tab for verified */}
+          <TabPanel>
             {verifiedProperties.map((property, index) => (
-              <div key={index}>
+              <tbody key={index}>
                 <Property
                   property={property}
                   key={property._id}
                   refetch={refetch}
                 />
-              </div>
+              </tbody>
             ))}
-          </div>
-        </TabPanel>
-        {/* tab for declined*/}
-        <TabPanel>
-          <div className="">
+          </TabPanel>
+          {/* tab for declined*/}
+          <TabPanel>
             {declinedProperties.map((property, index) => (
-              <div key={index}>
+              <tbody key={index}>
                 <Property
                   property={property}
                   key={property._id}
                   refetch={refetch}
                 />
-              </div>
+              </tbody>
             ))}
-          </div>
-        </TabPanel>
+          </TabPanel>
+        </div>
       </Tabs>
     </div>
   );

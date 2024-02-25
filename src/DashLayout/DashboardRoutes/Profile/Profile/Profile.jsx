@@ -7,9 +7,22 @@ import { MdOutlineHomeWork } from "react-icons/md";
 import { TbBolt, TbHomePlus } from "react-icons/tb";
 import SplineChart from "./SplineChart";
 import PieChart from "./PieChart";
+import useGetUsers from "../../../../Hooks/useGetUsers";
+import useProperties from "../../../../Hooks/useProperties";
+import CountUp from "react-countup";
 
 const Profile = () => {
   const { user } = useAuth();
+
+  const [users] = useGetUsers();
+  const [properties] = useProperties();
+
+  const forRent = properties.filter(
+    (item) => item?.property_info?.property_for === "rent"
+  );
+  const forSale = properties.filter(
+    (item) => item?.property_info?.property_for === "sale"
+  );
 
   return (
     <div className="bg-[#f9fafb] p-5 space-y-5">
@@ -23,7 +36,10 @@ const Profile = () => {
         <div className="flex justify-between bg-white gap-5  rounded-md p-5 border-2">
           <div className="flex flex-col">
             <p className="text-base text-slate-400">Total revenue</p>
-            <p className=" text-2xl font-medium">$ 45,890</p>
+            <p className="text-2xl font-medium">
+              $<CountUp end={45890} duration={3} />
+            </p>
+            {/* <p className=" text-2xl font-medium">$ 45,890</p> */}
           </div>
           <div className="bg-[#f8fafc] w-12 h-12 flex items-center justify-center text-[#16a34a] text-2xl rounded-lg">
             <FaDollarSign />
@@ -33,7 +49,10 @@ const Profile = () => {
         <div className="flex justify-between bg-white gap-5  rounded-md p-5 border-2">
           <div>
             <p className="text-base text-slate-400">Total Visitor</p>
-            <p className=" text-2xl  font-medium">45,890</p>
+            {/* <p className=" text-2xl  font-medium">45,890</p> */}
+            <p className="text-2xl font-medium">
+              <CountUp end={45890} duration={3} />
+            </p>
           </div>
           <div className="bg-[#f8fafc] w-12 h-12 flex items-center justify-center text-[#16a34a] text-2xl rounded-lg">
             <FaUsers />
@@ -43,7 +62,10 @@ const Profile = () => {
         <div className="flex justify-between bg-white gap-5  rounded-md p-5 border-2">
           <div>
             <p className="text-base text-slate-400">Total Properties</p>
-            <p className=" text-2xl  font-medium">45,890</p>
+            {/* <p className=" text-2xl  font-medium">45,890</p> */}
+            <p className="text-2xl font-medium">
+              <CountUp end={properties.length} duration={3} />
+            </p>
           </div>
           <div className="bg-[#f8fafc] w-12 h-12 flex items-center justify-center text-[#16a34a] text-2xl rounded-lg">
             <MdOutlineHomeWork />
@@ -53,7 +75,10 @@ const Profile = () => {
         <div className="flex justify-between bg-white gap-5 rounded-md p-5 border-2">
           <div>
             <p className="text-base text-slate-400">Properties for sell</p>
-            <p className=" text-2xl  font-medium">45,890</p>
+            <p className="text-2xl font-medium">
+              <CountUp end={forSale.length} duration={3} />
+            </p>
+            {/* <p className=" text-2xl  font-medium">45,890</p> */}
           </div>
           <div className="bg-[#f8fafc] w-12 h-12 flex items-center justify-center text-[#16a34a] text-2xl rounded-lg">
             <TbBolt />
@@ -63,7 +88,10 @@ const Profile = () => {
         <div className="flex justify-between bg-white gap-5  rounded-md p-5 border-2">
           <div>
             <p className="text-base text-slate-400">Properties for rent</p>
-            <p className=" text-2xl  font-medium">45,890</p>
+            <p className="text-2xl font-medium">
+              <CountUp end={forRent.length} duration={3} />
+            </p>
+            {/* <p className=" text-2xl  font-medium">45,890</p> */}
           </div>
           <div className="bg-[#f8fafc] w-12 h-12 flex items-center justify-center text-[#16a34a] text-2xl rounded-lg">
             <TbHomePlus />
@@ -73,7 +101,7 @@ const Profile = () => {
       {/* chart */}
       <div className="flex flex-col md:flex-row justify-between gap-5">
         {/* spline chart */}
-        <div className="w-auto md:w-3/5 p-5 rounded-lg  border-2">
+        <div className="w-auto md:w-3/5 p-5 rounded-lg bg-[#ffffff] border-2">
           <div className="flex flex-col md:flex-row justify-between items-center my-5 ">
             <h6 className="text-lg font-semibold">Revenue Analytics</h6>
             <select className="select-bordered select w-auto">
@@ -89,7 +117,7 @@ const Profile = () => {
           <SplineChart />
         </div>
         {/* pie chart */}
-        <div className="w-auto md:w-2/5 bg-white p-5 rounded-lg  border-2">
+        <div className="w-auto md:w-2/5 bg-[#ffffff] p-5 rounded-lg  border-2">
           <div className="flex flex-col md:flex-row justify-between items-center my-5 ">
             <h6 className="text-lg font-semibold">Sales Data</h6>
             <select className="select-bordered select w-auto">

@@ -1,15 +1,16 @@
 //component added by "Fahima"
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import SocialLogin from "../Social/SocialLogin";
+// import SocialLogin from "../Social/SocialLogin";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiospublic";
 
 const Register = () => {
   const { userRegister, userProfile } = useContext(AuthContext);
+  const navigate=useNavigate()
   const axiosPublic = useAxiosPublic();
   // registration function
   //images hosting to imgbb
@@ -42,7 +43,8 @@ const Register = () => {
               showConfirmButton: false,
               icon: "success",
             });
-            window.location.href = "/dashboard/profile";
+            // window.location.href = "/dashboard/profile";
+            navigate("/dashboard/profile");
           })
           .catch();
       })
@@ -171,7 +173,7 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-              <SocialLogin />
+              {/* <SocialLogin /> */}
             </form>
           </div>
         </div>
