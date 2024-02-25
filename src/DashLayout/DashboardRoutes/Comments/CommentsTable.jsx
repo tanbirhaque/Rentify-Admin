@@ -38,7 +38,8 @@ const CommentsTable = ({ comment, refetch }) => {
   const smallId = _id.slice(0, 6);
   return (
     <>
-      <tr className="flex flex-col md:flex-row justify-between gap-10 bg-[#ffffff]">
+      <tr className="grid grid-rows-1 md:grid-cols-5 gap-10 bg-[#ffffff]">
+        {/* <tr className="flex flex-col md:flex-row justify-between gap-10 bg-[#ffffff]"> */}
         <td>
           <div className="w-60 flex items-center gap-5">
             <div className="avatar">
@@ -53,14 +54,14 @@ const CommentsTable = ({ comment, refetch }) => {
             </div>
           </div>
         </td>
-        <td>
+        <td className=" col-span-3">
           <p className="text-[#3B4CB8] text-sm font-semibold">{blogName}</p>
           <p className="text-[#7E7E7E] text-base">{message}</p>
         </td>
         {/* <td>
           <p>{email}</p>
         </td> */}
-        <td>
+        <td className="flex justify-center items-center">
           <button
             onClick={() => handleDelete(_id)}
             className="btn btn-outline text-red-600 text-lg font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"

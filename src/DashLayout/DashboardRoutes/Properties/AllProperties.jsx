@@ -7,7 +7,6 @@ import Property from "./Property";
 import { useState } from "react";
 import "./tab.css";
 
-
 const AllProperties = () => {
   //index for tab
   const [tabIndex, setTabIndex] = useState(0);
@@ -51,10 +50,10 @@ const AllProperties = () => {
         </TabList>
 
         {/*  */}
-        <div className="bg-[#ffffff] rounded-lg shadow-lg p-5">
+        <div className="bg-[#ffffff] rounded-lg shadow-lg p-5 mt-10 mx-auto mb-20">
           <table className="table overflow-scroll">
             {/* head */}
-            {/* <thead className="font-semibold text-lg text-[#002172]">
+            <thead className="font-semibold text-lg text-[#002172]">
               <tr>
                 <th>Property Info</th>
                 <th>Location</th>
@@ -63,7 +62,7 @@ const AllProperties = () => {
                 <th>Type</th>
                 <th>Action</th>
               </tr>
-            </thead> */}
+            </thead>
           </table>
           {/*  */}
 

@@ -1,5 +1,9 @@
+//component added by "Fahima"
+
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useState } from "react";
+import { HiOutlineDotsHorizontal, HiOutlineDotsVertical } from "react-icons/hi";
 
 const Property = ({ property, refetch }) => {
   const { _id, property_info } = property || {};
@@ -10,10 +14,17 @@ const Property = ({ property, refetch }) => {
     property_details,
     verify_status,
     property_location,
+    property_category,
   } = property_info || {};
   const smallId = _id.slice(0, 6);
 
   const axiosSecure = useAxiosSecure();
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownVisible((prevState) => !prevState);
+  };
 
   const accept = {
     id: _id,
@@ -74,70 +85,72 @@ const Property = ({ property, refetch }) => {
   };
 
   return (
-    <>
-      <tr className="flex flex-col md:flex-row justify-between gap-10">
-        <td className="my-5">
-          <div className="w-60 flex items-center gap-5">
-            <div className="avatar">
-              <div className="w-20 rounded-xl">
-                <img src={property_img} alt="image of the property" />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
-              <p className="font-semibold text-base">{property_title}</p>
+    <tr className="text-base">
+      <td>
+        <div className="flex items-center gap-3">
+          <div className="avatar">
+            <div className="mask mask-squircle w-20 h-20">
+              <img src={property_img} alt="property-image" />
             </div>
           </div>
-        </td>
-        {/* owner details */}
-        <div className="w-60 flex items-center gap-5">
-          <div className="flex flex-col">
-            <p className="text-[#3B4CB8] text-sm">
-              {owner_details?.owner_name}
-            </p>
-            <p className="font-semibold text-base">
-              {owner_details?.owner_email}
-            </p>
+          <div>
+            <div className="font-bold">{property_title}</div>
           </div>
         </div>
-        <td>
-          {verify_status === "pending" && (
-            <>
-              <div className="flex gap-2">
-                {/* button to accept */}
-                <button
-                  onClick={() => handlePatch(accept)}
-                  className="btn btn-outline text-green-600 text-lg font-medium hover:bg-green-600 hover:text-white hover:border-none rounded-lg"
-                >
-                  Accept
-                </button>
-                {/* button to decline */}
-                <button
-                  onClick={() => handlePatch(decline)}
-                  className="btn btn-outline text-red-600 text-lg font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
-                >
-                  Decline
-                </button>
+      </td>
+      <td>{property_location.address.street}</td>
+      <td className="flex mt-7 justify-between ">{owner_details.owner_name}</td>
+      <td>$ {property_details.property_price}</td>
+      <td>{property_details.property_id}</td>
+      <td>{property_category}</td>
+      <td>
+        {/* Dropdown button */}
+        <div className="dropdown">
+          <button onClick={toggleDropdown} className="dropbtn">
+            <HiOutlineDotsHorizontal />
+          </button>
+          {/* Dropdown content */}
+          <div
+            className={`dropdown-content menu menu-sm -left-12 py-0   px-0 w-32  rounded-lg bg-[#ffffff]  text-center  ${
+              dropdownVisible ? "show" : ""
+            }`}
+          >
+            {/* Dropdown options */}
+            <div className="dropdown">
+              <button onClick={toggleDropdown} className="dropbtn">
+                <HiOutlineDotsHorizontal />
+              </button>
+              {/* Dropdown content */}
+              <div
+                className={`dropdown-content menu menu-sm -left-12 py-0   px-0 w-32  rounded-lg bg-[#ffffff]  text-center  ${
+                  dropdownVisible ? "show" : ""
+                }`}
+              >
+                {/* Dropdown options */}
+                <ul>
+                  <li className="hover:bg-[#002172] hover:rounded-t-md transition-all ease-out duration-300 hover:text-white">
+                    <button
+                      onClick={() => handlePatch(accept)}
+                      disabled={buttonDisabled}
+                    >
+                      Accept
+                    </button>
+                  </li>
+                  <li className="hover:bg-[#002172] hover:rounded-b-md transition-all ease-out duration-300 hover:text-white">
+                    <button
+                      onClick={() => handlePatch(decline)}
+                      disabled={buttonDisabled}
+                    >
+                      Decline
+                    </button>
+                  </li>
+                </ul>
               </div>
-            </>
-          )}
-        </td>
-        {verify_status === "verified" && (
-          <td>
-            <p className="text-green-800 font-semibold text-lg text-center">
-              Verified
-            </p>
-          </td>
-        )}
-        {verify_status === "declined" && (
-          <td>
-            <p className="text-red-700 font-semibold text-lg text-center">
-              Declined
-            </p>
-          </td>
-        )}
-      </tr>
-    </>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
   );
 };
 
