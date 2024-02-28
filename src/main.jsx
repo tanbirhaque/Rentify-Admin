@@ -8,7 +8,7 @@ import Reset from "./Authentication/Reset/Reset.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
 import DashLayout from "./DashLayout/DashLayout.jsx";
-import RoleChange from "./DashLayout/DashboardRoutes/User Manage/RoleChange.jsx";
+import OwnerRequest from "./DashLayout/DashboardRoutes/Owner Request/OwnerRequest.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Private from "./Provider/Private.jsx";
 import Comments from "./DashLayout/DashboardRoutes/Comments/Comments.jsx";
@@ -17,8 +17,6 @@ import ErrorPage from "./Error/ErrorPage.jsx";
 import Blogs from "./DashLayout/DashboardRoutes/Profile/Blogs/Blogs.jsx";
 import AllProperties from "./DashLayout/DashboardRoutes/Properties/AllProperties.jsx";
 import Profile from "./DashLayout/DashboardRoutes/Profile/Profile/Profile.jsx";
-
-
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -63,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: "owners",
-        element: <RoleChange />,
+        element: <OwnerRequest />,
       },
       {
         path: "reviews",
@@ -71,7 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: "comments",
-        element: <Comments/>,
+        element: <Comments />,
       },
       {
         path: "blogs",
