@@ -3,7 +3,7 @@
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const RoleChangeTable = ({ item, owner, refetch }) => {
+const OwnerRequestTable = ({ item, owner, refetch }) => {
   // const { _id, name, email, image, role } = item || {};
   const {
     // _id,
@@ -127,4 +127,4 @@ const RoleChangeTable = ({ item, owner, refetch }) => {
   );
 };
 
-export default RoleChangeTable;
+export default OwnerRequestTable;
