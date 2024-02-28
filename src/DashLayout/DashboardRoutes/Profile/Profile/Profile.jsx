@@ -7,14 +7,11 @@ import { MdOutlineHomeWork } from "react-icons/md";
 import { TbBolt, TbHomePlus } from "react-icons/tb";
 import SplineChart from "./SplineChart";
 import PieChart from "./PieChart";
-import useGetUsers from "../../../../Hooks/useGetUsers";
 import useProperties from "../../../../Hooks/useProperties";
 import CountUp from "react-countup";
 
 const Profile = () => {
   const { user } = useAuth();
-
-  const [users] = useGetUsers();
   const [properties] = useProperties();
 
   const forRent = properties.filter(
