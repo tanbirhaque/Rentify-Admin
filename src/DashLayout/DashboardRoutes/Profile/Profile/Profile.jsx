@@ -68,10 +68,10 @@ const Profile = () => {
             <MdOutlineHomeWork />
           </div>
         </div>
-        {/* sell  */}
+        {/* sale  */}
         <div className="flex justify-between bg-white gap-5 rounded-md p-5 border-2">
           <div>
-            <p className="text-base text-slate-400">Properties for sell</p>
+            <p className="text-base text-slate-400">Properties for sale</p>
             <p className="text-2xl font-medium">
               <CountUp end={forSale.length} duration={3} />
             </p>
