@@ -15,7 +15,8 @@
 
 .dashLi .active {
   background-color: #fff;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-weight: 700;
   color: #1f2937;
   padding-left: 8px;
   padding-top: 3px;
@@ -27,6 +28,15 @@
   -o-border-radius: 10px;
 }
 
+/* @media (min-width: 1280px) {
+  .dashLi .active {
+    font-size: 21px;
+  }
+} */
+
 .dashLi .active .dashIcon {
   color: #1f2937;
 }
+
+
+
