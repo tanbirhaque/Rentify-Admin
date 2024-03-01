@@ -78,7 +78,7 @@ const OwnerRequestTable = ({ item, owner, refetch }) => {
     <>
       {/* card format */}
       {/* <div className="bg-[#f5f5f5] p-10 grid grid-rows-3"> */}
-      <div className="max-w-[360px] h-auto p-6 bg-white shadow-lg rounded-xl space-y-3">
+      <div className="md:max-w-[360px] h-auto p-6 bg-white shadow-lg rounded-xl space-y-3">
         <div className="flex gap-5">
           <div className="avatar bg-white shadow-lg rounded-lg">
             <div className="w-16">

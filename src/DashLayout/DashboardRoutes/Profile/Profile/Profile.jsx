@@ -43,7 +43,8 @@ const Profile = () => {
         <p className="text-lg text-slate-400">Welcome Back</p>
       </div>
       {/* data cards */}
-      <div className="flex justify-between flex-col md:flex-row gap-5">
+      {/* <div className="flex justify-between flex-col lg:flex-row gap-5"> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
         {/* revenue */}
         <div className="flex justify-between bg-white gap-5  rounded-md p-5 border-2">
           <div className="flex flex-col">
@@ -85,10 +86,10 @@ const Profile = () => {
             <MdOutlineHomeWork />
           </div>
         </div>
-        {/* sell  */}
+        {/* sale  */}
         <div className="flex justify-between bg-white gap-5 rounded-md p-5 border-2">
           <div>
-            <p className="text-base text-slate-400">Properties for sell</p>
+            <p className="text-base text-slate-400">Properties for sale</p>
             <p className="text-2xl font-medium">
               <CountUp end={forSale.length} duration={3} />
             </p>
@@ -113,9 +114,9 @@ const Profile = () => {
         </div>
       </div>
       {/* chart */}
-      <div className="flex flex-col md:flex-row justify-between gap-5">
+      <div className="flex flex-col lg:flex-row justify-between gap-5">
         {/* spline chart */}
-        <div className="w-auto md:w-3/5 p-5 rounded-lg bg-[#ffffff] border-2">
+        <div className="w-auto lg:w-3/5 p-5 rounded-lg bg-[#ffffff] border-2">
           <div className="flex flex-col md:flex-row justify-between items-center my-5 ">
             <h6 className="text-lg font-semibold">Revenue Analytics</h6>
             <select className="select-bordered select w-auto">
@@ -131,7 +132,7 @@ const Profile = () => {
           <SplineChart />
         </div>
         {/* pie chart */}
-        <div className="w-auto md:w-2/5 bg-[#ffffff] p-5 rounded-lg  border-2">
+        <div className="w-auto lg:w-2/5 bg-[#ffffff] p-5 rounded-lg  border-2">
           <div className="flex flex-col md:flex-row justify-between items-center my-5 ">
             <h6 className="text-lg font-semibold">Sales Data</h6>
             <select className="select-bordered select w-auto">

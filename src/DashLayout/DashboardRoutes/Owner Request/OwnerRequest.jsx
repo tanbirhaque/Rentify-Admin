@@ -33,7 +33,7 @@ const OwnerRequest = () => {
         </TabList>
         {/* for approved */}
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:p-0">
             {approved.map((owner) => (
               <OwnerRequestTable
                 key={owner._id}
@@ -45,7 +45,7 @@ const OwnerRequest = () => {
         </TabPanel>
         {/* for pending */}
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:p-0">
             {pending.map((owner) => (
               <OwnerRequestTable
                 key={owner._id}
