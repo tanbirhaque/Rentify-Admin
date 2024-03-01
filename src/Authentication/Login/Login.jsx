@@ -1,20 +1,22 @@
+//component added by "Fahima"
+
 import { useContext } from "react";
-import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import SocialLogin from "../Social/SocialLogin";
+// import SocialLogin from "../Social/SocialLogin";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   //login function
   //form data
   const {
     register,
     handleSubmit,
     // watch,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
@@ -29,6 +31,8 @@ const Login = () => {
           showConfirmButton: false,
           icon: "success",
         });
+        // window.location.href = "/dashboard/profile";
+        navigate("/dashboard/profile");
       })
       .catch((err) => {
         console.log(err.message);
@@ -71,7 +75,7 @@ const Login = () => {
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="email"
                   placeholder="Email address here"
-                  {...register("email")}
+                  {...register("email", { required: true })}
                   required
                 />
               </div>
@@ -83,7 +87,7 @@ const Login = () => {
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="password"
                   placeholder="**************"
-                  {...register("password")}
+                  {...register("password", { required: true })}
                   required
                 />
               </div>
@@ -129,13 +133,11 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-              <SocialLogin />
+              {/* <SocialLogin /> */}
             </form>
           </div>
         </div>
       </div>
-
-      {/*  */}
     </div>
   );
 };

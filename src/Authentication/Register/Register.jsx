@@ -1,86 +1,50 @@
+//component added by "Fahima"
+
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import SocialLogin from "../Social/SocialLogin";
-import { Controller, useForm } from "react-hook-form";
+// import SocialLogin from "../Social/SocialLogin";
+import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../Hooks/useAxiospublic";
 
 const Register = () => {
   const { userRegister, userProfile } = useContext(AuthContext);
+  const navigate=useNavigate()
+  const axiosPublic = useAxiosPublic();
   // registration function
-  // const handleRegister = (e) => {
-  //   // e.preventDefault();
-  //   // const form = e.target;
-  //   // const name = form.name.value;
-  //   // const image = form.image.value;
-  //   // const email = form.email.value;
-  //   // const password = form.password.value;
-  //   // console.log(password);
-  //   // regex for special character
-  //   // const special = /[!@#$%^&*()_+\-=[\]{};:',.<>?~]/g;
-  //   // if (password.length < 6) {
-  //   //   toast.error("Password should be 6 characters long.");
-  //   //   return;
-  //   // } else if (!/[A-Z]/.test(password)) {
-  //   //   toast.error("Password should contain one Upper case character.");
-  //   //   return;
-  //   // } else if (!special.test(password)) {
-  //   //   toast.error("Password should contain one special character.");
-  //   //   return;
-  //   // }
-  //   // userRegister(email, password)
-  //   //   .then((response) => {
-  //   //     // toast.success("User created successfully!!!");
-  //   //     console.log(response.user);
-  //   //     userProfile(name, image)
-  //   //       .then((response) => {
-  //   //         Swal.fire({
-  //   //           title: "User created successfully!",
-  //   //           timer: 2000,
-  //   //           color: "#002172",
-  //   //           showConfirmButton: false,
-  //   //           icon: "success",
-  //   //         });
-  //   //       })
-  //   //       .catch((error) => {
-  //   //         toast.error(error.code);
-  //   //       });
-  //   //   })
-  //   //   .catch((error) => {
-  //   //     toast.error(error.code);
-  //   //   });
-  //   //
-  //   //
-  // };
-  //
+  //images hosting to imgbb
+  const image_hosting_api =
+    "https://api.imgbb.com/1/upload?key=bd58c2cacfaf8bbacf4ee63a9bafe25c";
+
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    //image upload and getting url
+    const imageFile = { image: data.image[0] };
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
     // console.log(data);
     userRegister(data.email, data.password)
-      .then((res) => {
-        console.log(res.user);
-
-        // const userInfo = {
-        //   name: data.name,
-        //   email: data.email,
-        //   image: data.image,
-        //   role: "student",
-        // };
-        userProfile(data.name, data.image)
+      .then((response) => {
+        console.log(response.user);
+        const imageUrl = res.data.data.display_url;
+        userProfile(data.name, imageUrl)
           .then(() => {
             Swal.fire({
-              title: "User created successfully!",
+              title: "Admin Logged In Successfully!",
               timer: 2000,
               color: "#002172",
               showConfirmButton: false,
               icon: "success",
             });
+            // window.location.href = "/dashboard/profile";
+            navigate("/dashboard/profile");
           })
           .catch();
       })
@@ -147,28 +111,10 @@ const Register = () => {
               <div className="mb-3">
                 <label className="inline-block mb-2">Image URL</label>
                 {/*  */}
-                <Controller
-                  name="image"
-                  control={control}
-                  render={({ field }) => (
-                    <>
-                      <input
-                        name="image"
-                        type="file"
-                        required
-                        onChange={(e) => {
-                          // Convert the selected image to URL and set it in the field
-                          const url = URL.createObjectURL(e.target.files[0]);
-                          field.onChange(url);
-                        }}
-                      />
-                      <img
-                        src={field.value}
-                        alt="Preview"
-                        style={{ maxWidth: "100%" }}
-                      />
-                    </>
-                  )}
+                <input
+                  {...register("image", { required: true })}
+                  type="file"
+                  className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                 />
                 {/*  */}
               </div>
@@ -197,7 +143,6 @@ const Register = () => {
                   </span>
                 )}
               </div>
-
               <div>
                 {/* button */}
                 <div className="grid">
@@ -228,7 +173,7 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-              <SocialLogin />
+              {/* <SocialLogin /> */}
             </form>
           </div>
         </div>

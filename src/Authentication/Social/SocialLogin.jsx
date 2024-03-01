@@ -1,8 +1,12 @@
+//component added by "Fahima"
+
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 const SocialLogin = () => {
   const { googleLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogin = (data) => {
     data()
       .then((response) => {
@@ -14,6 +18,8 @@ const SocialLogin = () => {
           showConfirmButton: false,
           icon: "success",
         });
+        // window.location.href = "/dashboard/profile";
+        navigate("/dashboard/profile");
       })
       .catch(() => {});
   };
