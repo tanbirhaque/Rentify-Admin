@@ -13,7 +13,7 @@ const BlogTable = ({ blog, refetch }) => {
       title: `Do you want to delete the Comments?`,
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: "Yes",
+      confirmButtonText: 'Yes',
       denyButtonText: `No`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
