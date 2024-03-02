@@ -36,12 +36,11 @@ class PieChart extends Component {
   render() {
     return (
       <div>
-        <div id="chart">
+        <div id="chart" className="">
           <ReactApexChart
             options={this.state.options}
             series={this.state.series}
             type="pie"
-            width={500}
           />
         </div>
         <div id="html-dist"></div>
