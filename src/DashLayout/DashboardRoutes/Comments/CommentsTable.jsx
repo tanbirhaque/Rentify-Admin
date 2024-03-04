@@ -2,6 +2,7 @@
 
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { MdOutlineDeleteOutline } from "react-icons/md";
 
 const CommentsTable = ({ comment, refetch }) => {
   const axiosSecure = useAxiosSecure();
