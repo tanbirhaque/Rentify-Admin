@@ -3,6 +3,7 @@
 import useReviews from "../../../Hooks/useReviews";
 import Header from "../../DashShared/Header/Header";
 import ReviewsTable from "./ReviewsTable";
+import { MdOutlineDeleteOutline } from "react-icons/md";
 
 const Reviews = () => {
   //fetch reviews
@@ -13,7 +14,8 @@ const Reviews = () => {
       <Header heading={"Reviews from Users"} title={"Reviews"} />
       <div className="overflow-x-auto shadow-lg rounded-lg">
         <table className="table ">
-          <tbody>
+          {/* <tbody> */}
+          <div className="border-2 p-10 bg-[#FFFFFF] space-y-5 rounded-md">
             {reviews.map((review) => (
               <ReviewsTable
                 key={review._id}
@@ -21,7 +23,8 @@ const Reviews = () => {
                 refetch={refetch}
               />
             ))}
-          </tbody>
+          </div>
+          {/* </tbody> */}
         </table>
       </div>
     </div>
