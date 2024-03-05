@@ -22,12 +22,12 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DashLayout />,
+    element: <Private><DashLayout /></Private>,
     // element: <Login />,
     children: [
       {
         path: "/",
-        element: <Profile />,
+        element:<Private><Profile /></Private> ,
       },
       {
         path: "owners",

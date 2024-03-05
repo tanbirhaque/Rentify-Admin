@@ -44,7 +44,7 @@ const Register = () => {
               icon: "success",
             });
             // window.location.href = "/dashboard/profile";
-            navigate("/dashboard/profile");
+            navigate("/");
           })
           .catch();
       })
