@@ -1,17 +1,24 @@
 import "./SideBar.css";
 import { Link, NavLink } from "react-router-dom";
-import { FaUserCircle, FaUserEdit, FaRegCommentDots, FaHome } from "react-icons/fa";
+import {
+  FaUserCircle,
+  FaUserEdit,
+  FaRegCommentDots,
+  FaHome,
+} from "react-icons/fa";
 import { ImBlog } from "react-icons/im";
 import {
   MdOutlineDashboardCustomize,
-  MdOutlineRateReview, MdDomainVerification
+  MdOutlineRateReview,
+  MdDomainVerification,
+  MdQueryStats,
 } from "react-icons/md";
+import { IoIosStats } from "react-icons/io";
 import { useState } from "react";
 
-
 const SideBar = () => {
-  const [isDropDownOpen, setIsDropDownOpen] = useState(false)
-  const [isDropDownOpen2, setIsDropDownOpen2] = useState(false)
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const [isDropDownOpen2, setIsDropDownOpen2] = useState(false);
 
   // const sideLinks = (
   //   <>
@@ -62,57 +69,41 @@ const SideBar = () => {
   //   </>
   // );
 
-
   const sideLinks = (
     <>
       <li className="dashLi xl:text-[20px]">
-        <NavLink
-          to="/dashboard/profile"
-          className="dashNav flex items-center gap-2"
-        >
-          <FaUserCircle className="dashIcon text-[#64707d]"></FaUserCircle>
-          Profile
+        <NavLink to="/" className="dashNav flex items-center gap-2">
+          <IoIosStats className="dashIcon text-[#64707d]"></IoIosStats>
+          Dashboard
         </NavLink>
       </li>
       <li className="dashLi xl:text-[20px]">
-        <NavLink
-          to="/dashboard/owners"
-          className="dashNav flex items-center gap-2"
-        >
+        <NavLink to="/owners" className="dashNav flex items-center gap-2">
           <FaUserEdit className="dashIcon text-[#64707d]"></FaUserEdit>
           All Owners
         </NavLink>
       </li>
       <li className="dashLi xl:text-[20px]">
-        <NavLink
-          to="/dashboard/reviews"
-          className="dashNav flex items-center gap-2"
-        >
+        <NavLink to="/reviews" className="dashNav flex items-center gap-2">
           <MdOutlineRateReview className="dashIcon text-[#64707d]"></MdOutlineRateReview>
           Reviews
         </NavLink>
       </li>
       <li className="dashLi xl:text-[20px]">
-        <NavLink
-          to="/dashboard/blogs"
-          className="dashNav flex items-center gap-2"
-        >
+        <NavLink to="/blogs" className="dashNav flex items-center gap-2">
           <ImBlog className="dashIcon text-[#64707d]"></ImBlog>
           Blogs
         </NavLink>
       </li>
       <li className="dashLi xl:text-[20px]">
-        <NavLink
-          to="/dashboard/comments"
-          className="dashNav flex items-center gap-2"
-        >
+        <NavLink to="/comments" className="dashNav flex items-center gap-2">
           <FaRegCommentDots className="dashIcon text-[#64707d]"></FaRegCommentDots>
           Comments
         </NavLink>
       </li>
       <li className="dashLi xl:text-[20px]">
         <NavLink
-          to="/dashboard/property-verification"
+          to="/property-verification"
           className="dashNav flex items-center gap-2"
         >
           <MdDomainVerification className="dashIcon text-[#64707d]"></MdDomainVerification>
@@ -138,16 +129,16 @@ const SideBar = () => {
   const handleDropDownClick = () => {
     setIsDropDownOpen(!isDropDownOpen);
     // console.log(isDropDownOpen);
-  }
+  };
   const handleDropDownClick2 = () => {
     setIsDropDownOpen2(!isDropDownOpen2);
     // console.log(isDropDownOpen2);
-  }
+  };
 
   return (
     <div>
       <div className="w-64 xl:min-w-[300px] min-h-screen">
-        <div className="flex justify-center items-center my-6">
+        <div className="flex items-center my-6 ml-5">
           <Link to="/">
             <div className="flex  items-center">
               <img
@@ -162,7 +153,7 @@ const SideBar = () => {
         </div>
         {/* Sidebar Contents (Routes of dashboard) starts here */}
         <div className="p-4">
-          <span className="flex gap-5">
+          {/* <span className="flex gap-5">
             <NavLink to="/" className="flex items-center gap-2">
               <FaHome></FaHome>
               Home
@@ -172,8 +163,8 @@ const SideBar = () => {
               <MdOutlineDashboardCustomize />
               Dashboard
             </h3>
-          </span>
-          <hr className="mb-3" />
+          </span> */}
+          {/* <hr className="mb-3" /> */}
           {/* user routes */}
           <ul className="flex flex-col gap-2">{sideLinks}</ul>
         </div>

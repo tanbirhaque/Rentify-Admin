@@ -1,0 +1,362 @@
+[
+  {
+    "_id": "17",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Annually",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "",
+      "property_title": "Tranquil Haven Estates",
+      "property_category": "Residential",
+      "property_description": "Nestled amidst lush greenery and serene surroundings, Tranquil Haven Estates offers a retreat-like atmosphere for residents seeking peace and tranquility. With spacious, modern homes designed for comfort and relaxation, this community provides a perfect blend of nature and luxury living.",
+      "property_details": {
+        "property_id": "1241660",
+        "property_price": "35000",
+        "property_type": "Office Space",
+        "property_status": "pending",
+        "sqf": "1500",
+        "bedroom": "2",
+        "bath": "2",
+        "balcony": "1",
+        "garages": "1",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Swimming Pool", "Gym", "Concierge"],
+        "property_tags": ["City View", "Luxury", "Modern"]
+      },
+      "property_location": {
+        "address": {
+          "street": "789 Elm Street",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "18",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Permanent",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/6rTTyKT/10.webp",
+      "property_title": "Sunset Ridge Residence",
+      "property_category": "Residential",
+      "property_description": "Perched atop a gentle slope, Sunset Ridge Residences boasts breathtaking panoramic views of the sun setting over the horizon. Each home is meticulously crafted to maximize these vistas, providing residents with a daily spectacle of nature's beauty. With impeccable design and premium amenities, this community offers an unparalleled living experience.",
+      "property_details": {
+        "property_id": "1241661",
+        "property_price": "250000",
+        "property_type": "Retail Space",
+        "property_status": "pending",
+        "bedroom": "3",
+        "bath": "2.5",
+        "balcony": "0",
+        "garages": "2",
+        "sqf": "2000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Private Garden", "Fireplace", "Walk-in Closet"],
+        "property_tags": [
+          "Family-Friendly",
+          "Quiet Neighborhood",
+          "Pet-Friendly"
+        ]
+      },
+      "property_location": {
+        "address": {
+          "street": "123 Maple Avenue",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "19",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Annually",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/0fPvYY1/11.jpg",
+      "property_title": "Lakeside Serene Villa",
+      "property_category": "Residential",
+      "property_description": "Set along the shimmering shores of a tranquil lake, Lakeside Serenity Villas offers waterfront living at its finest. Residents can indulge in a variety of recreational activities such as boating, fishing, or simply relaxing by the water's edge. The community's elegant villas feature expansive windows that frame stunning views of the lake, creating a peaceful oasis for residents to call home.",
+      "property_details": {
+        "property_id": "1241662",
+        "property_price": "400000",
+        "property_type": "Warehouse",
+        "property_status": "pending",
+        "bedroom": "1",
+        "bath": "1",
+        "balcony": "0",
+        "garages": "0",
+        "sqf": "800",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Fitness Center", "Roof Deck", "24/7 Security"],
+        "property_tags": ["City Living", "Modern Design", "Convenience"]
+      },
+      "property_location": {
+        "address": {
+          "street": "456 Oak Avenue",
+          "city": "Metropolis",
+          "state": "NY",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "20",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/10rGQ0Z/12.jpg",
+      "property_title": "Oak Grove Heights",
+      "property_category": "Residential",
+      "property_description": "Tucked away in a picturesque wooded enclave, Oak Grove Heights exudes natural charm and understated elegance. Towering oak trees provide shade and privacy for residents, while walking trails offer opportunities for leisurely strolls amidst nature. The homes in this community are designed with classic architectural elements and modern amenities, creating a timeless appeal for discerning homeowners.",
+      "property_details": {
+        "property_id": "1241663",
+        "property_price": "5000",
+        "property_type": "Office Building",
+        "property_status": "pending",
+        "bedroom": "4",
+        "bath": "4",
+        "balcony": "2",
+        "garages": "3",
+        "sqf": "4000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Swimming Pool", "Garden", "Home Theater"],
+        "property_tags": [
+          "Panoramic Views",
+          "Luxury Living",
+          "High-End Finishes"
+        ]
+      },
+      "property_location": {
+        "address": {
+          "street": "789 Elm Street",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "21",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/FBkscCj/13.jpg",
+      "property_title": "Harbor View Estate",
+      "property_category": "Residential",
+      "property_description": "Situated along the coastline, Harbor View Estates offers residents the ultimate coastal living experience. From expansive balconies and terraces, residents can enjoy sweeping views of the harbor, with sailboats gliding across the azure waters. With a marina nearby and easy access to waterfront dining and entertainment, this community epitomizes the quintessential seaside lifestyle.",
+      "property_details": {
+        "property_id": "1241664",
+        "property_price": "4500",
+        "property_type": "Retail Space",
+        "property_status": "pending",
+        "bedroom": "1",
+        "bath": "1",
+        "balcony": "0",
+        "garages": "0",
+        "sqf": "1000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": [
+          "Exposed Brick Walls",
+          "Open Floor Plan",
+          "High Ceilings"
+        ],
+        "property_tags": ["Urban Living", "Industrial Design", "Convenience"]
+      },
+      "property_location": {
+        "address": {
+          "street": "321 Pine Street",
+          "city": "Metropolis",
+          "state": "NY",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "22",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/TT3BnXd/14.jpg",
+      "property_title": "Meadowbrook Meadows",
+      "property_category": "Residential",
+      "property_description": "Embraced by rolling hills and verdant meadows, Meadowbrook Meadows is a pastoral retreat where residents can escape the hustle and bustle of city life. The homes here are designed to blend seamlessly with the natural landscape, featuring earthy tones and rustic finishes. With ample green spaces and community gardens, residents can immerse themselves in the beauty of nature right outside their doorstep.",
+      "property_details": {
+        "property_id": "1241665",
+        "property_price": "6000",
+        "property_type": "Industrial Warehouse",
+        "property_status": "pending",
+        "bedroom": "2",
+        "bath": "2",
+        "balcony": "1",
+        "garages": "1",
+        "sqf": "1500",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Fitness Center", "Swimming Pool", "Concierge"],
+        "property_tags": ["City View", "Luxury Living", "Modern Design"]
+      },
+      "property_location": {
+        "address": {
+          "street": "456 Oak Avenue",
+          "city": "Metropolis",
+          "state": "NY",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "23",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/QYw4H4D/15.jpg",
+      "property_title": "Mountain Crest Retreat",
+      "property_category": "Residential",
+      "property_description": "Perched high atop a scenic mountain ridge, Mountain Crest Retreat offers majestic views of the surrounding valleys and peaks. The crisp mountain air and tranquil ambiance provide a refreshing escape from urban living. Each home in this exclusive community is designed to harmonize with its natural surroundings, offering a cozy sanctuary for residents to unwind and recharge.",
+      "property_details": {
+        "property_id": "1241666",
+        "property_price": "7000",
+        "property_type": "Office Tower",
+        "property_status": "pending",
+        "bedroom": "5",
+        "bath": "5",
+        "balcony": "2",
+        "garages": "3",
+        "sqf": "6000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Private Pool", "Home Theater", "Guest House"],
+        "property_tags": ["Luxury Living", "Privacy", "High-End Amenities"]
+      },
+      "property_location": {
+        "address": {
+          "street": "789 Elm Street",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "24",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Annually",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/rsNymg8/16.jpg",
+      "property_title": "Urban Oasis Apartment",
+      "property_category": "Residential",
+      "property_description": "Located in the heart of the city, Urban Oasis Apartments offers a vibrant and dynamic living experience for urban dwellers. With sleek, modern architecture and luxurious amenities, these apartments redefine city living. Residents can enjoy convenient access to shopping, dining, and entertainment, while also having access to tranquil communal spaces such as rooftop gardens and courtyards, providing a peaceful retreat amidst the urban hustle and bustle.",
+      "property_details": {
+        "property_id": "1241667",
+        "property_price": "800000",
+        "property_type": "Office Building",
+        "property_status": "pending",
+        "bedroom": "3",
+        "bath": "2.5",
+        "balcony": "1",
+        "garages": "2",
+        "sqf": "1800",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": [
+          "Rooftop Terrace",
+          "Modern Kitchen",
+          "Hardwood Floors"
+        ],
+        "property_tags": ["City Views", "Contemporary Design", "Convenience"]
+      },
+      "property_location": {
+        "address": {
+          "street": "123 Main Street",
+          "city": "Anytown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  }
+]
