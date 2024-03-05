@@ -62,10 +62,10 @@ const CommentsTable = ({ comment, refetch }) => {
           </div>
         </div>
         <div className="col-span-2">
-          <p className="text-sm md:text-base mt-1.5 text-cyan-600">
+          <p className="text-sm md:text-base mt-1.5 lg:mt-0 text-cyan-600">
             <span className="font-bold">Blog Name:</span> {blogName}
           </p>
-          <p className="text-sm md:text-base mt-1.5">{message}</p>
+          <p className="text-sm md:text-base mt-1.5 lg:mt-0">{message}</p>
         </div>
         <div className="hidden sm:flex justify-center items-center sm:justify-end">
           <button
