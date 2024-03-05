@@ -1,9 +1,11 @@
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useState } from "react";
+import { MdDelete } from "react-icons/md";
 
 const BlogTable = ({ blog, refetch }) => {
-  const [isTruncate, setIsTruncate] = useState(true);
+  const [isClamp, setIsClamp] = useState(true);
+  // const [isTruncate, setIsTruncate] = useState(true);
   const { _id, img, title, date, details } = blog || {};
   const smallId = _id.slice(0, 6);
   const axiosSecure = useAxiosSecure();
@@ -36,77 +38,62 @@ const BlogTable = ({ blog, refetch }) => {
     });
   };
 
-  const handleTruncate = () => {
-    setIsTruncate(!isTruncate);
+  const handleClamp = () => {
+    setIsClamp(!isClamp);
   };
+  // const handleTruncate = () => {
+  //   setIsTruncate(!isTruncate);
+  // };
 
   return (
     <>
-      <tr className="max-w-full grid grid-cols-4 bg-[#ffffff]">
-        <td className="w-full">
+      <div className="max-w-full grid grid-cols-1 lg:grid-cols-4 border-2 p-5 bg-[#FFFFFF] rounded-lg gap-2 lg:gap-3">
+        <div className="max-w-full">
           <div className="min-w-full flex items-center gap-5">
             <div className="avatar">
-              <div className="w-20 rounded-xl">
+              <div className="w-16 rounded-xl">
                 <img src={img} alt="image of the blog" />
               </div>
             </div>
             <div className="w-full flex flex-col">
-              <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
-              <p className="font-semibold text-base">{title}</p>
-              <p className="text-[#7E7E7E] text-xs">{date}</p>
-            </div>
-          </div>
-        </td>
-        {/* <td className="grid"> */}
-        <td className="col-span-2">
-          <p
-            className={`${isTruncate ? "truncate" : ""}  cursor-pointer`}
-            onClick={handleTruncate}
-          >
-            {details}
-          </p>
-        </td>
-        <td className="flex justify-center">
-          <button
-            onClick={() => handleDelete(_id)}
-            className="btn btn-outline text-red-600 text-lg font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
-          >
-            Delete
-          </button>
-        </td>
-      </tr>
-      {/* <tr className="max-w-screen-lg flex flex-col md:flex-row justify-between gap-10">
-        <td className="w-1/4">
-          <div className="w-60 flex items-center gap-5">
-            <div className="avatar">
-              <div className="w-20 rounded-xl">
-                <img src={img} alt="Avatar Tailwind CSS Component" />
+              <div className="flex justify-between">
+                <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
+                <MdDelete
+                  onClick={() => handleDelete(_id)}
+                  className="text-red-600 text-xl ml-10 sm:hidden"
+                />
               </div>
-            </div>
-            <div className="flex flex-col">
-              <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
-              <p className="font-semibold text-base">{title}</p>
+              <p className="font-semibold text-sm md:text-base">{title}</p>
               <p className="text-[#7E7E7E] text-xs">{date}</p>
             </div>
           </div>
-        </td>
-        <td className="w-2/4">
+        </div>
+        <div className="col-span-2">
           <p
-            className={`${isTruncate ? "truncate" : ""}  cursor-pointer`}
-            onClick={handleTruncate}
+            // className={`${
+            //   isTruncate
+            //     ? "truncate text-sm md:text-base mt-1.5"
+            //     : "text-sm md:text-base mt-1.5"
+            // }  cursor-pointer`}
+            className={`${
+              isClamp
+                ? "line-clamp-3 text-sm md:text-base mt-1.5"
+                : "text-sm md:text-base mt-1.5"
+            }  cursor-pointer`}
+            onClick={handleClamp}
           >
             {details}
           </p>
-        </td>
-        <td className="w-1/4">
+        </div>
+        <div className="hidden sm:flex justify-center items-center sm:justify-end">
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-outline text-red-600 text-lg font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
+            className="btn btn-outline text-red-600 text-sm font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
           >
             Delete
           </button>
-        </td>
-      </tr> */}
+        </div>
+      </div>
     </>
   );
 };
