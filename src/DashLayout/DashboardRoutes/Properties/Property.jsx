@@ -26,14 +26,30 @@ const Property = ({ property, refetch }) => {
     setDropdownVisible((prevState) => !prevState);
   };
 
-  const accept = {
-    id: _id,
-    propertyStatus: `verified`,
+  const setAccept = (id) => {
+    axiosSecure
+      .put(`/accept/${id}`)
+      .then((res) => {
+        console.log("hi", res);
+        refetch();
+        setButtonDisabled(true);
+      })
+      .catch((error) =>
+        console.error("Error updating verification status:", error)
+      );
   };
 
-  const decline = {
-    id: _id,
-    propertyStatus: `declined`,
+  const setReject = (id) => {
+    axiosSecure
+      .put(`/reject/${id}`)
+      .then((res) => {
+        console.log(res);
+        refetch();
+        setButtonDisabled(true);
+      })
+      .catch((error) =>
+        console.error("Error updating verification status:", error)
+      );
   };
 
   const handlePatch = (patchObject) => {
@@ -86,71 +102,60 @@ const Property = ({ property, refetch }) => {
 
   return (
     <>
-      <tr className="text-base min-w-full">
-        <td>
-          <div className="flex items-center gap-3">
-            <div className="avatar">
-              <div className="mask mask-squircle w-20 h-20">
-                <img src={property_img} alt="property-image" />
-              </div>
-            </div>
+      <td>
+        <div className="flex items-center gap-3">
+          <div>
             <div>
-              <div className="font-bold">{property_title}</div>
+              <img
+                className="w-[100px] h-[75px] rounded"
+                src={property_img}
+                alt="property-image"
+              />
             </div>
           </div>
-        </td>
-        <td>{property_location.address.street}</td>
-        <td>{owner_details.owner_name}</td>
-        <td>$ {property_details.property_price}</td>
-        <td>{property_category}</td>
-        <td>
-          {/* Dropdown button */}
-          <div className="dropdown">
-            <button onClick={toggleDropdown} className="dropbtn">
-              <HiOutlineDotsHorizontal />
-            </button>
-            {/* Dropdown content */}
-            <div
-              className={`dropdown-content menu menu-sm -left-12 py-0   px-0 w-32  rounded-lg bg-[#ffffff]  text-center  ${
-                dropdownVisible ? "show" : ""
-              }`}
-            >
-              {/* Dropdown options */}
-              <div className="dropdown">
-                <button onClick={toggleDropdown} className="dropbtn">
-                  <HiOutlineDotsHorizontal />
-                </button>
-                {/* Dropdown content */}
-                <div
-                  className={`dropdown-content menu menu-sm -left-12 py-0   px-0 w-32  rounded-lg bg-[#ffffff]  text-center  ${
-                    dropdownVisible ? "show" : ""
-                  }`}
+          <div>
+            <div className="font-bold">{property_title}</div>
+          </div>
+        </div>
+      </td>
+      <td>{property_location.address.street}</td>
+      <td>{owner_details.owner_name}</td>
+      <td>$ {property_details.property_price}</td>
+      <td>{property_category}</td>
+      <td>
+        {/* Dropdown button */}
+        <div className="dropdown">
+          <button onClick={toggleDropdown} className="dropbtn">
+            <HiOutlineDotsHorizontal />
+          </button>
+          {/* Dropdown content */}
+          <div
+            className={`dropdown-content menu menu-sm -left-12 py-0   px-0 w-32  rounded-lg bg-[#ffffff] shadow-md text-center  ${
+              dropdownVisible ? "show" : ""
+            }`}
+          >
+            {/* Dropdown options */}
+            <ul>
+              <li className="hover:bg-[#002172] hover:rounded-t-md transition-all ease-out duration-300 hover:text-white">
+                <button
+                  onClick={() => setAccept(_id)}
+                  disabled={buttonDisabled}
                 >
-                  {/* Dropdown options */}
-                  <ul>
-                    <li className="hover:bg-[#002172] hover:rounded-t-md transition-all ease-out duration-300 hover:text-white">
-                      <button
-                        onClick={() => handlePatch(accept)}
-                        disabled={buttonDisabled}
-                      >
-                        Accept
-                      </button>
-                    </li>
-                    <li className="hover:bg-[#002172] hover:rounded-b-md transition-all ease-out duration-300 hover:text-white">
-                      <button
-                        onClick={() => handlePatch(decline)}
-                        disabled={buttonDisabled}
-                      >
-                        Decline
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+                  Accept
+                </button>
+              </li>
+              <li className="hover:bg-[#002172] hover:rounded-b-md transition-all ease-out duration-300 hover:text-white">
+                <button
+                  onClick={() => setReject(_id)}
+                  disabled={buttonDisabled}
+                >
+                  Reject
+                </button>
+              </li>
+            </ul>
           </div>
-        </td>
-      </tr>
+        </div>
+      </td>
     </>
   );
 };
