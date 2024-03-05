@@ -86,7 +86,6 @@ const Property = ({ property, refetch }) => {
 
   return (
     <>
-      <tr className="text-base min-w-full">
         <td>
           <div className="flex items-center gap-3">
             <div className="avatar">
@@ -150,7 +149,6 @@ const Property = ({ property, refetch }) => {
             </div>
           </div>
         </td>
-      </tr>
     </>
   );
 };
