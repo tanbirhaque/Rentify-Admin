@@ -22,12 +22,20 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Private><DashLayout /></Private>,
+    element: (
+      <Private>
+        <DashLayout />
+      </Private>
+    ),
     // element: <Login />,
     children: [
       {
         path: "/",
-        element:<Private><Profile /></Private> ,
+        element: (
+          <Private>
+            <Profile />
+          </Private>
+        ),
       },
       {
         path: "owners",
@@ -67,16 +75,6 @@ const router = createBrowserRouter([
     path: "reset",
     element: <Reset />,
   },
-  // Dashboard routes here
-  // {
-  //   path: "dashboard",
-  //   element: (
-  //     <Private>
-  //       <DashLayout></DashLayout>
-  //     </Private>
-  //   ),
-
-  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

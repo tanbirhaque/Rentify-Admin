@@ -52,7 +52,7 @@ const Property = ({ property, refetch }) => {
           .patch(`/verification`, patchObject)
           .then((res) => {
             if (res.data.modifiedCount > 0) {
-              console.log(res.data);
+              // console.log(res.data);
               refetch();
               {
                 patchObject?.propertyStatus === "verified"

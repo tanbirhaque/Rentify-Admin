@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useForm } from "react-hook-form";
-import useAxiosPublic from "../../Hooks/useAxiospublic";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useState } from "react";
 
 const Register = () => {
@@ -41,7 +41,7 @@ const Register = () => {
     // console.log(data);
     userRegister(data.email, data.password)
       .then((response) => {
-        console.log(response.user);
+        // console.log(response.user);
         const imageUrl = res.data.data.display_url;
         userProfile(data.name, imageUrl)
           .then(() => {
@@ -58,8 +58,6 @@ const Register = () => {
           .catch();
       })
       .catch((err) => {
-        console.log(err.code);
-        console.log(err.message);
         Swal.fire({
           title: err.code,
           timer: 2000,

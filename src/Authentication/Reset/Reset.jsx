@@ -20,12 +20,10 @@ const Reset = () => {
           showConfirmButton: false,
           icon: "success",
         });
-        console.log(response.user);
+        // console.log(response.user);
       })
       .catch((error) => {
-        // toast.error(error.code);
-        console.log(error.message);
-        console.log(error.code);
+        // console.log(error.code);
       });
   };
   return (
@@ -58,7 +56,6 @@ const Reset = () => {
                 </label>
                 <input
                   type="email"
-                
                   className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
                   name="email"
                   placeholder="Enter Your Email"

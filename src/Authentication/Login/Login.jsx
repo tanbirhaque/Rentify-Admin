@@ -27,10 +27,10 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     loginUser(data.email, data.password)
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
         Swal.fire({
           title: "Login successful!!!",
           timer: 2000,
@@ -42,7 +42,7 @@ const Login = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.message);
+        // console.log(err.message);
         Swal.fire({
           title: err.code,
           timer: 2000,

@@ -13,7 +13,7 @@ const DashNav = ({ toggleSidebar }) => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        console.log("logged out");
+        // console.log("logged out");
         // swal("Signout", "You are successfully signed out", "success");
         //sweet alert 2 added by Fahima
         Swal.fire({
@@ -30,7 +30,7 @@ const DashNav = ({ toggleSidebar }) => {
         }, 500);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 

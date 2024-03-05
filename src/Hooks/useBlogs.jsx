@@ -9,7 +9,7 @@ const useBlogs = () => {
     queryFn: async () => {
       // when data import from database then change the url & use axios public
       const res = await axiosSecure.get("/blogs");
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     },
   });

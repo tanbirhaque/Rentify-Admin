@@ -64,18 +64,11 @@ const ReviewsTable = ({ review, refetch }) => {
                 className="rounded-full w-10 h-10"
               />
               <div>
-                {/* <div className="flex justify-between"> */}
                 <div>
                   <h3 className="text-sm font-bold">{reviewerName}</h3>
                   <p className="text-xs text-gray-400">{date}</p>
                 </div>
-                {/* delete button for smaller device */}
-                {/* <MdDelete
-                    onClick={() => handleDelete(_id)}
-                    className="text-red-600 text-3xl md:hidden"
-                    // className="text-red-600 text-3xl ml-7 md:hidden"
-                  /> */}
-                {/* </div> */}
+              
               </div>
             </div>
             {/* rating */}
