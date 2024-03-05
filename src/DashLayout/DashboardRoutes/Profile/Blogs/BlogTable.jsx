@@ -4,7 +4,8 @@ import { useState } from "react";
 import { MdDelete } from "react-icons/md";
 
 const BlogTable = ({ blog, refetch }) => {
-  const [isTruncate, setIsTruncate] = useState(true);
+  const [isClamp, setIsClamp] = useState(true);
+  // const [isTruncate, setIsTruncate] = useState(true);
   const { _id, img, title, date, details } = blog || {};
   const smallId = _id.slice(0, 6);
   const axiosSecure = useAxiosSecure();
@@ -37,9 +38,12 @@ const BlogTable = ({ blog, refetch }) => {
     });
   };
 
-  const handleTruncate = () => {
-    setIsTruncate(!isTruncate);
+  const handleClamp = () => {
+    setIsClamp(!isClamp);
   };
+  // const handleTruncate = () => {
+  //   setIsTruncate(!isTruncate);
+  // };
 
   return (
     <>
@@ -66,12 +70,17 @@ const BlogTable = ({ blog, refetch }) => {
         </div>
         <div className="col-span-2">
           <p
+            // className={`${
+            //   isTruncate
+            //     ? "truncate text-sm md:text-base mt-1.5"
+            //     : "text-sm md:text-base mt-1.5"
+            // }  cursor-pointer`}
             className={`${
-              isTruncate
-                ? "truncate text-sm md:text-base mt-1.5"
+              isClamp
+                ? "line-clamp-3 text-sm md:text-base mt-1.5"
                 : "text-sm md:text-base mt-1.5"
             }  cursor-pointer`}
-            onClick={handleTruncate}
+            onClick={handleClamp}
           >
             {details}
           </p>

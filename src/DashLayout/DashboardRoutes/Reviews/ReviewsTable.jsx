@@ -3,7 +3,7 @@
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { Rating } from "react-simple-star-rating";
-import { MdOutlineDeleteOutline } from "react-icons/md";
+import { MdOutlineDeleteOutline, MdDelete } from "react-icons/md";
 
 const ReviewsTable = ({ review, refetch }) => {
   const axiosSecure = useAxiosSecure();
@@ -53,7 +53,7 @@ const ReviewsTable = ({ review, refetch }) => {
 
   return (
     <>
-      <div className="flex justify-between border-2 p-5 bg-[#FFFFFF] rounded-lg ">
+      <div className="flex flex-col md:flex-row justify-between border-2  p-5 bg-[#FFFFFF] rounded-lg ">
         <div>
           <div className="flex justify-between">
             {/* reviewer details */}
@@ -64,8 +64,18 @@ const ReviewsTable = ({ review, refetch }) => {
                 className="rounded-full w-10 h-10"
               />
               <div>
-                <h3 className="text-sm font-bold">{reviewerName}</h3>
-                <p className="text-xs text-gray-400">{date}</p>
+                {/* <div className="flex justify-between"> */}
+                <div>
+                  <h3 className="text-sm font-bold">{reviewerName}</h3>
+                  <p className="text-xs text-gray-400">{date}</p>
+                </div>
+                {/* delete button for smaller device */}
+                {/* <MdDelete
+                    onClick={() => handleDelete(_id)}
+                    className="text-red-600 text-3xl md:hidden"
+                    // className="text-red-600 text-3xl ml-7 md:hidden"
+                  /> */}
+                {/* </div> */}
               </div>
             </div>
             {/* rating */}
@@ -73,18 +83,18 @@ const ReviewsTable = ({ review, refetch }) => {
           </div>
           {/* review details */}
           <div className="my-3">
-            <p className="text-xs text-sky-500">#{propertyTitle} </p>
-            <p className="text-gray-600 text-sm">{reviewText} </p>
+            <p className="text-xs text-cyan-500 font-bold"># {propertyTitle}</p>
+            <p className="text-gray-600 text-sm md:pr-5">{reviewText} </p>
           </div>
         </div>
-        <button
-          onClick={() => handleDelete(_id)}
-          className="text-red-600 font-medium text-4xl border-l-2"
-          // className="btn btn-outline text-red-600 font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg text-lg"
-        >
-          {/* Delete */}
-          <MdOutlineDeleteOutline />
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={() => handleDelete(_id)}
+            className="text-red-600 font-medium text-4xl border-t-2 md:border-t-0 md:border-l-2 w-full flex justify-center md:inline-block pt-1.5"
+          >
+            <MdOutlineDeleteOutline />
+          </button>
+        </div>
       </div>
     </>
   );
