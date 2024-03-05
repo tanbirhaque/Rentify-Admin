@@ -88,9 +88,9 @@ const Property = ({ property, refetch }) => {
     <>
         <td>
           <div className="flex items-center gap-3">
-            <div className="avatar">
-              <div className="mask mask-squircle w-20 h-20">
-                <img src={property_img} alt="property-image" />
+            <div>
+              <div>
+                <img className="w-[100px] h-[75px] rounded" src={property_img} alt="property-image" />
               </div>
             </div>
             <div>

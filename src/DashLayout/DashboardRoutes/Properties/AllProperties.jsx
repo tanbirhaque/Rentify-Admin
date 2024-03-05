@@ -57,27 +57,51 @@ const PropertyManagement = () => {
         </TabPanel>
 
         <TabPanel>
-          <table className="table overflow-scroll">
-            <tbody>
-              {verifiedProperties.map((property) => (
-                <tr key={property._id}>
-                  <Property property={property} refetch={refetch} />
+          <div className="bg-[#ffffff] rounded-lg shadow-lg p-5 mt-10 mx-auto mb-20">
+            <table className="table overflow-scroll">
+              <thead className="font-semibold text-lg text-[#002172]">
+                <tr>
+                  <th>Property Info</th>
+                  <th>Location</th>
+                  <th>Owner Info</th>
+                  <th>Price</th>
+                  <th>Type</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {verifiedProperties.map((property) => (
+                  <tr key={property._id}>
+                    <Property property={property} refetch={refetch} />
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </TabPanel>
 
         <TabPanel>
-          <table className="table overflow-scroll">
-            <tbody>
-              {declinedProperties.map((property) => (
-                <tr key={property._id}>
-                  <Property property={property} refetch={refetch} />
+          <div className="bg-[#ffffff] rounded-lg shadow-lg p-5 mt-10 mx-auto mb-20">
+            <table className="table overflow-scroll">
+              <thead className="font-semibold text-lg text-[#002172]">
+                <tr>
+                  <th>Property Info</th>
+                  <th>Location</th>
+                  <th>Owner Info</th>
+                  <th>Price</th>
+                  <th>Type</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {declinedProperties.map((property) => (
+                  <tr key={property._id}>
+                    <Property property={property} refetch={refetch} />
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </TabPanel>
       </Tabs>
     </div>
