@@ -10,12 +10,10 @@ const Comments = () => {
 
   return (
     <div className="p-5 bg-[#f5f5f5] min-h-[90vh] space-y-5">
-      <Header heading={"Comments From Users"} title={"Comments"} />
-      {/* <div className="overflow-x-auto shadow-lg rounded-lg"> */}
+      <Header heading={"Comments From blogs"} title={"Comments"} />
+
       <div className="shadow-lg rounded-lg">
-        {/* <table className="table"> */}
-        {/* <tbody> */}
-        <div>
+        <div className="border-2 p-5 bg-[#FFFFFF] space-y-5 rounded-md">
           {comments.map((comment) => (
             <CommentsTable
               key={comment._id}
@@ -24,8 +22,6 @@ const Comments = () => {
             />
           ))}
         </div>
-        {/* </tbody> */}
-        {/* </table> */}
       </div>
     </div>
   );

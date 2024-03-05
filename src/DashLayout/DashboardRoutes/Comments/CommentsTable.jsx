@@ -2,12 +2,13 @@
 
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { MdOutlineDeleteOutline } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
 const CommentsTable = ({ comment, refetch }) => {
   const axiosSecure = useAxiosSecure();
 
   const { _id, name, email, img, message, date, blogName } = comment || {};
+
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -39,38 +40,42 @@ const CommentsTable = ({ comment, refetch }) => {
   const smallId = _id.slice(0, 6);
   return (
     <>
-      <tr className="grid grid-rows-1 md:grid-cols-5 gap-10 bg-[#ffffff]">
-        {/* <tr className="flex flex-col md:flex-row justify-between gap-10 bg-[#ffffff]"> */}
-        <td>
-          <div className="w-60 flex items-center gap-5">
+      <div className="max-w-full grid grid-cols-1 lg:grid-cols-4 border-2 p-5 bg-[#FFFFFF] rounded-lg gap-2 lg:gap-3">
+        <div className="max-w-full">
+          <div className="min-w-full flex items-center gap-5">
             <div className="avatar">
-              <div className="w-20 rounded-xl">
-                <img src={img} alt="image of the commenter" />
+              <div className="w-16 rounded-xl">
+                <img src={img} alt="image of the blog" />
               </div>
             </div>
-            <div className="flex flex-col">
-              <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
-              <p className="font-semibold text-base">{name}</p>
+            <div className="w-full flex flex-col">
+              <div className="flex justify-between">
+                <p className="text-cyan-700 text-xs">#{smallId}</p>
+                <MdDelete
+                  onClick={() => handleDelete(_id)}
+                  className="text-red-600 text-xl ml-10 sm:hidden"
+                />
+              </div>
+              <p className="font-semibold text-sm md:text-base">{name}</p>
               <p className="text-[#7E7E7E] text-xs">{date}</p>
             </div>
           </div>
-        </td>
-        <td className=" col-span-3">
-          <p className="text-[#3B4CB8] text-sm font-semibold">{blogName}</p>
-          <p className="text-[#7E7E7E] text-base">{message}</p>
-        </td>
-        {/* <td>
-          <p>{email}</p>
-        </td> */}
-        <td className="flex justify-center items-center">
+        </div>
+        <div className="col-span-2">
+          <p className="text-sm md:text-base mt-1.5 text-cyan-600">
+            <span className="font-bold">Blog Name:</span> {blogName}
+          </p>
+          <p className="text-sm md:text-base mt-1.5">{message}</p>
+        </div>
+        <div className="hidden sm:flex justify-center items-center sm:justify-end">
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-outline text-red-600 text-lg font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
+            className="btn btn-outline text-red-600 text-sm font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
           >
             Delete
           </button>
-        </td>
-      </tr>
+        </div>
+      </div>
     </>
   );
 };

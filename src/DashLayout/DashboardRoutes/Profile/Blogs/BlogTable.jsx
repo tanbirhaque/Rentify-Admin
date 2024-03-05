@@ -76,7 +76,7 @@ const BlogTable = ({ blog, refetch }) => {
             {details}
           </p>
         </div>
-        <div className="hidden sm:flex justify-center items-center md:justify-end">
+        <div className="hidden sm:flex justify-center items-center sm:justify-end">
           <button
             onClick={() => handleDelete(_id)}
             className="btn btn-outline text-red-600 text-sm font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg"
