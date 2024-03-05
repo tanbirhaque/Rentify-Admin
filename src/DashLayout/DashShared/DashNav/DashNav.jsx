@@ -37,7 +37,7 @@ const DashNav = ({ toggleSidebar }) => {
   const defaultImg = "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1696786604~exp=1696787204~hmac=c10645727b8724eecda4984ef1d8fbfba92a9c9072a57b851c28c9b1d8d62b81";
 
   return (
-    <div className="min-w-full bg-white shadow-md flex items-center justify-end gap-6 lg:justify-between pl-5 pr-2">
+    <div className="min-w-full bg-white shadow-md flex items-center justify-end lg:gap-6 lg:justify-between pl-5 pr-3">
       <div className="hidden lg:flex">
         <button className="" onClick={toggleSidebar}>
           {/* {isSidebarOpen ? <FaTimes></FaTimes> : <FaBars></FaBars>} */}
@@ -46,7 +46,7 @@ const DashNav = ({ toggleSidebar }) => {
       </div>
       <div className="dropdown dropdown-end">
         <div className="flex items-center">
-          <div className="flex flex-col items-end mr-4 h-full">
+          <div className="flex flex-col items-end lg:mr-4 h-full">
             <h3 className="capitalize poppins-font text-[16px] font-semibold">{user?.displayName}</h3>
             <p className="capitalize poppins-font text-[12px] text-[#464a53]">Admin</p>
           </div>
