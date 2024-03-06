@@ -9,9 +9,11 @@ import SplineChart from "./SplineChart";
 import PieChart from "./PieChart";
 import useProperties from "../../../../Hooks/useProperties";
 import CountUp from "react-countup";
+import useGetUsers from "../../../../Hooks/useGetUsers";
 
 const Profile = () => {
   const { user } = useAuth();
+  const [users] = useGetUsers();
   const [properties] = useProperties();
 
   const forRent = properties.filter(
@@ -20,6 +22,19 @@ const Profile = () => {
   const forSale = properties.filter(
     (item) => item?.property_info?.property_for === "sale"
   );
+
+  const revenueProperties = properties.map(
+    (item) => item?.property_info?.property_details?.property_price
+  );
+
+  // console.log(revenueProperties);
+
+  //adding revenues
+  let totalRevenue = 0;
+  for (let i = 0; i < revenueProperties.length; i++) {
+    totalRevenue += revenueProperties[i];
+  }
+  console.log(totalRevenue);
 
   return (
     <div className="bg-[#f9fafb] p-5 space-y-5">
@@ -35,7 +50,8 @@ const Profile = () => {
           <div className="flex flex-col">
             <p className="text-base text-slate-400">Total revenue</p>
             <p className="text-2xl font-medium">
-              $<CountUp end={45890} duration={3} />
+              $<CountUp end={totalRevenue} duration={3} />
+              {/* $<CountUp end={45890} duration={3} /> */}
             </p>
             {/* <p className=" text-2xl font-medium">$ 45,890</p> */}
           </div>
@@ -49,7 +65,8 @@ const Profile = () => {
             <p className="text-base text-slate-400">Total Visitor</p>
             {/* <p className=" text-2xl  font-medium">45,890</p> */}
             <p className="text-2xl font-medium">
-              <CountUp end={45890} duration={3} />
+              <CountUp end={users.length} duration={3} />
+              {/* <CountUp end={45890} duration={3} /> */}
             </p>
           </div>
           <div className="bg-[#f8fafc] w-12 h-12 flex items-center justify-center text-[#16a34a] text-2xl rounded-lg">

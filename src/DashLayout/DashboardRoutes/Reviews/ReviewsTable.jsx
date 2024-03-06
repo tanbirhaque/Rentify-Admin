@@ -3,6 +3,7 @@
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { Rating } from "react-simple-star-rating";
+import { MdOutlineDeleteOutline, MdDelete } from "react-icons/md";
 
 const ReviewsTable = ({ review, refetch }) => {
   const axiosSecure = useAxiosSecure();
@@ -48,53 +49,53 @@ const ReviewsTable = ({ review, refetch }) => {
       }
     });
   };
-  const smallId = propertyId.slice(0, 6);
+  // const smallId = propertyId.slice(0, 6);
 
   return (
     <>
-      <tr className="flex flex-col md:flex-row justify-between bg-[#ffffff]">
-        <td>
-          {/* reviewer details */}
-          <div className="w-52 flex items-center gap-5">
-            <div className="avatar">
-              <div className="w-20 rounded-xl">
-                <img src={reviewerImage} alt="reviewer image" />
+      <div className="flex flex-col md:flex-row justify-between border-2  p-5 bg-[#FFFFFF] rounded-lg ">
+        <div>
+          <div className="flex justify-between">
+            {/* reviewer details */}
+            <div className="flex gap-2">
+              <img
+                src={reviewerImage}
+                alt={`image of ${reviewerName}`}
+                className="rounded-full w-10 h-10"
+              />
+              <div>
+                {/* <div className="flex justify-between"> */}
+                <div>
+                  <h3 className="text-sm font-bold">{reviewerName}</h3>
+                  <p className="text-xs text-gray-400">{date}</p>
+                </div>
+                {/* delete button for smaller device */}
+                {/* <MdDelete
+                    onClick={() => handleDelete(_id)}
+                    className="text-red-600 text-3xl md:hidden"
+                    // className="text-red-600 text-3xl ml-7 md:hidden"
+                  /> */}
+                {/* </div> */}
               </div>
             </div>
-            <div className="flex flex-col">
-              <p className="text-[#3B4CB8] text-xs">#{smallId}</p>
-              <p className="font-semibold text-base">{reviewerName}</p>
-              <p className="text-[#7E7E7E] text-xs">{date}</p>
-            </div>
+            {/* rating */}
+            {/* <Rating start={5} /> */}
           </div>
-        </td>
-        <td>
           {/* review details */}
-          <div className="flex flex-col text-lg">
-            <div>
-              <p className=" font-bold text-xl">
-                Property Title:{" "}
-                <span className="text-teal-600">{propertyTitle}</span>
-              </p>
-              <p className="text-left">
-                <span className="font-bold">Review:</span> {reviewText}
-              </p>
-            </div>
+          <div className="my-3">
+            <p className="text-xs text-cyan-500 font-bold"># {propertyTitle}</p>
+            <p className="text-gray-600 text-sm md:pr-5">{reviewText} </p>
           </div>
-        </td>
-        {/* <td>
-          <Rating initialValue={reviewRating} readonly />
-        </td> */}
-
-        <td>
+        </div>
+        <div className="flex justify-center">
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-outline text-red-600 font-medium hover:bg-red-600 hover:text-white hover:border-none rounded-lg text-lg"
+            className="text-red-600 font-medium text-4xl border-t-2 md:border-t-0 md:border-l-2 w-full flex justify-center md:inline-block pt-1.5"
           >
-            Delete
+            <MdOutlineDeleteOutline />
           </button>
-        </td>
-      </tr>
+        </div>
+      </div>
     </>
   );
 };

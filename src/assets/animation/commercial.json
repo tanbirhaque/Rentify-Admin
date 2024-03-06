@@ -1,0 +1,362 @@
+[
+  {
+    "_id": "9",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Annually",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/6BcMbpM/9.jpg",
+      "property_title": "Prime Commercial Office Space",
+      "property_category": "Commercial",
+      "property_description": "Modern office space available for rent in a prime business district. Features include ample natural light, high-speed internet, and dedicated parking.",
+      "property_details": {
+        "property_id": "1241660",
+        "property_price": "350000",
+        "property_type": "Office Space",
+        "property_status": "pending",
+        "sqf": "1500",
+        "bedroom": "2",
+        "bath": "2",
+        "balcony": "1",
+        "garages": "1",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Swimming Pool", "Gym", "Concierge"],
+        "property_tags": ["City View", "Luxury", "Modern"]
+      },
+      "property_location": {
+        "address": {
+          "street": "789 Elm Street",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "10",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Permanent",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/6rTTyKT/10.webp",
+      "property_title": "Downtown Retail Space",
+      "property_category": "Commercial",
+      "property_description": "Excellent retail space available for lease in the heart of downtown. Perfect for boutique shops or cafes.",
+      "property_details": {
+        "property_id": "1241661",
+        "property_price": "250000",
+        "property_type": "Retail Space",
+        "property_status": "pending",
+        "bedroom": "3",
+        "bath": "2.5",
+        "balcony": "0",
+        "garages": "2",
+        "sqf": "2000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Private Garden", "Fireplace", "Walk-in Closet"],
+        "property_tags": [
+          "Family-Friendly",
+          "Quiet Neighborhood",
+          "Pet-Friendly"
+        ]
+      },
+      "property_location": {
+        "address": {
+          "street": "123 Maple Avenue",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "11",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Annually",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/0fPvYY1/11.jpg",
+      "property_title": "Modern Commercial Warehouse",
+      "property_category": "Commercial",
+      "property_description": "Spacious warehouse available for rent. Ideal for storage or distribution purposes. Features include loading docks and high ceilings.",
+      "property_details": {
+        "property_id": "1241662",
+        "property_price": "400000",
+        "property_type": "Warehouse",
+        "property_status": "pending",
+        "bedroom": "1",
+        "bath": "1",
+        "balcony": "0",
+        "garages": "0",
+        "sqf": "800",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Fitness Center", "Roof Deck", "24/7 Security"],
+        "property_tags": ["City Living", "Modern Design", "Convenience"]
+      },
+      "property_location": {
+        "address": {
+          "street": "456 Oak Avenue",
+          "city": "Metropolis",
+          "state": "NY",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "12",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/10rGQ0Z/12.jpg",
+      "property_title": "Commercial Building with Office Spaces",
+      "property_category": "Commercial",
+      "property_description": "Multi-level commercial building with modern office spaces available for lease. Convenient location with easy access to transportation.",
+      "property_details": {
+        "property_id": "1241663",
+        "property_price": "5000",
+        "property_type": "Office Building",
+        "property_status": "pending",
+        "bedroom": "4",
+        "bath": "4",
+        "balcony": "2",
+        "garages": "3",
+        "sqf": "4000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Swimming Pool", "Garden", "Home Theater"],
+        "property_tags": [
+          "Panoramic Views",
+          "Luxury Living",
+          "High-End Finishes"
+        ]
+      },
+      "property_location": {
+        "address": {
+          "street": "789 Elm Street",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "13",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/FBkscCj/13.jpg",
+      "property_title": "Commercial Retail Space in Shopping Plaza",
+      "property_category": "Commercial",
+      "property_description": "Retail space available for lease in a bustling shopping plaza. High visibility and foot traffic make it an ideal location for retail businesses.",
+      "property_details": {
+        "property_id": "1241664",
+        "property_price": "4500",
+        "property_type": "Retail Space",
+        "property_status": "pending",
+        "bedroom": "1",
+        "bath": "1",
+        "balcony": "0",
+        "garages": "0",
+        "sqf": "1000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": [
+          "Exposed Brick Walls",
+          "Open Floor Plan",
+          "High Ceilings"
+        ],
+        "property_tags": ["Urban Living", "Industrial Design", "Convenience"]
+      },
+      "property_location": {
+        "address": {
+          "street": "321 Pine Street",
+          "city": "Metropolis",
+          "state": "NY",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "14",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/TT3BnXd/14.jpg",
+      "property_title": "Industrial Warehouse Complex",
+      "property_category": "Commercial",
+      "property_description": "Large industrial warehouse complex available for lease. Suitable for manufacturing, storage, or distribution operations.",
+      "property_details": {
+        "property_id": "1241665",
+        "property_price": "6000",
+        "property_type": "Industrial Warehouse",
+        "property_status": "pending",
+        "bedroom": "2",
+        "bath": "2",
+        "balcony": "1",
+        "garages": "1",
+        "sqf": "1500",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Fitness Center", "Swimming Pool", "Concierge"],
+        "property_tags": ["City View", "Luxury Living", "Modern Design"]
+      },
+      "property_location": {
+        "address": {
+          "street": "456 Oak Avenue",
+          "city": "Metropolis",
+          "state": "NY",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "15",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Monthly",
+      "property_for": "rent",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/QYw4H4D/15.jpg",
+      "property_title": "Commercial Office Tower",
+      "property_category": "Commercial",
+      "property_description": "State-of-the-art office tower offering premium office spaces for lease. Central location with easy access to public transportation.",
+      "property_details": {
+        "property_id": "1241666",
+        "property_price": "7000",
+        "property_type": "Office Tower",
+        "property_status": "pending",
+        "bedroom": "5",
+        "bath": "5",
+        "balcony": "2",
+        "garages": "3",
+        "sqf": "6000",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": ["Private Pool", "Home Theater", "Guest House"],
+        "property_tags": ["Luxury Living", "Privacy", "High-End Amenities"]
+      },
+      "property_location": {
+        "address": {
+          "street": "789 Elm Street",
+          "city": "Downtown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "16",
+    "property_info": {
+      "owner_details": {
+        "owner_name": "Tanbir Haque",
+        "owner_img": "https://i.ibb.co/B6zjvx1/profile-pic-4.png",
+        "owner_email": "testemail@gmail.com",
+        "owner_phone": "01646740414",
+        "owner_profession": "Web developer",
+        "owner_address": "77 Morris St. Ridgewood, NJ 67655"
+      },
+      "ownership_duration": "Annually",
+      "property_for": "sale",
+      "verify_status": "pending",
+      "property_img": "https://i.ibb.co/rsNymg8/16.jpg",
+      "property_title": "Commercial Office Building with Parking",
+      "property_category": "Commercial",
+      "property_description": "Modern office building with ample parking available for lease. Conveniently located near major highways and public transportation.",
+      "property_details": {
+        "property_id": "1241667",
+        "property_price": "8000",
+        "property_type": "Office Building",
+        "property_status": "pending",
+        "bedroom": "3",
+        "bath": "2.5",
+        "balcony": "1",
+        "garages": "2",
+        "sqf": "1800",
+        "floor_plans": "https://i.ibb.co/7R0qCgH/breadcrumb-4.jpg",
+        "property_video": "https://www.example.com/property-video",
+        "property_features": [
+          "Rooftop Terrace",
+          "Modern Kitchen",
+          "Hardwood Floors"
+        ],
+        "property_tags": ["City Views", "Contemporary Design", "Convenience"]
+      },
+      "property_location": {
+        "address": {
+          "street": "123 Main Street",
+          "city": "Anytown",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    }
+  }
+]
