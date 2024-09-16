@@ -34,7 +34,7 @@ const Profile = () => {
   for (let i = 0; i < revenueProperties.length; i++) {
     totalRevenue += revenueProperties[i];
   }
-  console.log(totalRevenue);
+  // console.log(totalRevenue);
 
   return (
     <div className="bg-[#f9fafb] p-5 space-y-5">

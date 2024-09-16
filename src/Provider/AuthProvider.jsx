@@ -53,7 +53,7 @@ const AuthProvider = ({ children }) => {
       photoURL: image,
     });
   };
-  //pasword reset
+  //password reset
   const resetPass = (email) => {
     setLoading(true);
     return sendPasswordResetEmail(auth, email);

@@ -4,14 +4,23 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-// import SocialLogin from "../Social/SocialLogin";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useForm } from "react-hook-form";
-import useAxiosPublic from "../../Hooks/useAxiospublic";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { useState } from "react";
 
 const Register = () => {
   const { userRegister, userProfile } = useContext(AuthContext);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
+
+  //for password visibility
+  const [passwordVisible, setPasswordVisible] = useState(true);
+
+  const handleTogglePassword = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   // registration function
   //images hosting to imgbb
   const image_hosting_api =
@@ -32,7 +41,7 @@ const Register = () => {
     // console.log(data);
     userRegister(data.email, data.password)
       .then((response) => {
-        console.log(response.user);
+        // console.log(response.user);
         const imageUrl = res.data.data.display_url;
         userProfile(data.name, imageUrl)
           .then(() => {
@@ -49,8 +58,6 @@ const Register = () => {
           .catch();
       })
       .catch((err) => {
-        console.log(err.code);
-        console.log(err.message);
         Swal.fire({
           title: err.code,
           timer: 2000,
@@ -60,7 +67,7 @@ const Register = () => {
         });
       });
   };
-  //
+
   return (
     <div className="max-w-2xl mx-auto">
       <div className="flex flex-col items-center justify-center h-screen px-4">
@@ -123,8 +130,8 @@ const Register = () => {
                 <label className="inline-block mb-2">Password</label>
                 <input
                   required
-                  type="password"
-                  className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
+                  type={passwordVisible ? "text" : "password"}
+                  className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none relative"
                   name="password"
                   placeholder="**************"
                   {...register("password", {
@@ -132,6 +139,12 @@ const Register = () => {
                     pattern: /^(?=.*[A-Z]).{6,}$/i,
                   })}
                 />
+                <span
+                  className="cursor-pointer text-xl absolute -ml-8 mt-2"
+                  onClick={handleTogglePassword}
+                >
+                  {passwordVisible ? <IoMdEye /> : <IoMdEyeOff />}
+                </span>
                 {errors.password?.type === "minLength" && (
                   <span className="text-red-700">
                     Password length should be 6 characters.
@@ -173,7 +186,6 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-              {/* <SocialLogin /> */}
             </form>
           </div>
         </div>

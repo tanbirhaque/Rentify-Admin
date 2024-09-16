@@ -20,7 +20,7 @@ const OwnerRequest = () => {
 
   //   filtering data according to status true
   const approved = owners.filter((owner) => owner?.ownerStatus === true);
-  console.log(approved);
+  // console.log(approved);
 
   return (
     <div className="p-5 bg-[#f5f5f5] min-h-[90vh] space-y-5">

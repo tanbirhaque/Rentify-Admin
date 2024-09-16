@@ -7,7 +7,7 @@ import ReviewsTable from "./ReviewsTable";
 const Reviews = () => {
   //fetch reviews
   const [reviews, refetch] = useReviews();
-  console.log(reviews);
+  // console.log(reviews);
   return (
     <div className="pt-5 md:p-5 bg-[#f5f5f5] min-h-screen space-y-5">
       <Header heading={"Reviews from Users"} title={"Reviews"} />

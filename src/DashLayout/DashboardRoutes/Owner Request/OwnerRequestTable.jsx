@@ -4,9 +4,8 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
 const OwnerRequestTable = ({ item, owner, refetch }) => {
-  // const { _id, name, email, image, role } = item || {};
   const {
-    // _id,
+    _id,
     firstName,
     lastName,
     number,
@@ -26,8 +25,7 @@ const OwnerRequestTable = ({ item, owner, refetch }) => {
       email: info.ownerEmail,
     };
 
-    console.log(patchInfo);
-    //Do you want to make ${firstName} ${lastName} an owner
+    // console.log(patchInfo);
     Swal.fire({
       title: `${
         ownerStatus === true
@@ -61,7 +59,6 @@ const OwnerRequestTable = ({ item, owner, refetch }) => {
             // Handle error if PATCH request fails
             console.error("Error updating user data:", error);
           });
-        // axiosSecure.patch(`/ownerRequest/${id}`).then();
       } else if (result.isDenied) {
         Swal.fire(
           `${firstName} ${lastName} is not an ${
@@ -77,7 +74,6 @@ const OwnerRequestTable = ({ item, owner, refetch }) => {
   return (
     <>
       {/* card format */}
-      {/* <div className="bg-[#f5f5f5] p-10 grid grid-rows-3"> */}
       <div className="md:max-w-[360px] h-auto p-6 bg-white shadow-lg rounded-xl space-y-3">
         <div className="flex gap-5">
           <div className="avatar bg-white shadow-lg rounded-lg">
@@ -122,7 +118,6 @@ const OwnerRequestTable = ({ item, owner, refetch }) => {
           </button>
         )}
       </div>
-      {/* </div> */}
     </>
   );
 };

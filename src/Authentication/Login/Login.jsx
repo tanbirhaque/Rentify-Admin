@@ -1,15 +1,22 @@
 //component added by "Fahima"
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-// import SocialLogin from "../Social/SocialLogin";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  //for password visibility
+  const [passwordVisible, setPasswordVisible] = useState(true);
+
+  const handleTogglePassword = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   //login function
   //form data
   const {
@@ -20,10 +27,10 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     loginUser(data.email, data.password)
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
         Swal.fire({
           title: "Login successful!!!",
           timer: 2000,
@@ -35,7 +42,7 @@ const Login = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.message);
+        // console.log(err.message);
         Swal.fire({
           title: err.code,
           timer: 2000,
@@ -83,13 +90,19 @@ const Login = () => {
               <div className="mb-5">
                 <label className="inline-block mb-2">Password</label>
                 <input
-                  type="password"
-                  className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none"
+                  type={passwordVisible ? "text" : "password"}
+                  className="border border-gray-300 text-gray-900 rounded focus:ring-[#002172] focus:border-[#002172] w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none relative"
                   name="password"
                   placeholder="**************"
                   {...register("password", { required: true })}
                   required
                 />
+                <span
+                  className="cursor-pointer text-xl absolute -ml-8 mt-2"
+                  onClick={handleTogglePassword}
+                >
+                  {passwordVisible ? <IoMdEye /> : <IoMdEyeOff />}
+                </span>
               </div>
               {/* checkbox */}
               <div className="lg:flex justify-between items-center mb-4">
@@ -97,11 +110,9 @@ const Login = () => {
                   <input
                     type="checkbox"
                     className="w-4 h-4 text-[#002172] bg-white border-gray-300 rounded focus:ring-[#002172] focus:outline-none focus:ring-2"
-                    id="rememberme"
+                    id="remember-me"
                   />
-                  <label className="inline-block ms-2" htmlFor="rememberme">
-                    Remember me
-                  </label>
+                  <label className="inline-block ms-2">Remember me</label>
                 </div>
               </div>
               <div>
@@ -133,7 +144,6 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-              {/* <SocialLogin /> */}
             </form>
           </div>
         </div>

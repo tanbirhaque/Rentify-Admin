@@ -10,7 +10,6 @@ const CommentsTable = ({ comment, refetch }) => {
   const { _id, name, email, img, message, date, blogName } = comment || {};
 
   const handleDelete = (id) => {
-    console.log(id);
     Swal.fire({
       title: `Do you want to delete the Comments?`,
       showDenyButton: true,
